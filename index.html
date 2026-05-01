@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mumtaz Enser, M.A. — Independent Researcher in Philosophy of AI, Responsibility Theory, and AI Governance. Research on relational agency, distributed responsibility, and ethical withdrawal.">
+<title>Mumtaz Enser — Independent Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1612;
+    --paper: #f5f0e8;
+    --accent: #8b2e0f;
+    --muted: #6b6355;
+    --rule: #c8bfaa;
+    --highlight: #e8dfc8;
+  }
+  body.dark {
+    --ink: #e5e0d8;
+    --paper: #1e1b18;
+    --accent: #cf8b6c;
+    --muted: #b0a898;
+    --rule: #4a443c;
+    --highlight: #2e2a24;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    min-height: 100vh;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.35;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(var(--paper-rgb, 245,240,232), 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 52px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  body.dark nav { background: rgba(30,27,24,0.96); }
+
+  .nav-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-controls {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  .icon-btn {
+    background: none;
+    border: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    color: var(--ink);
+    transition: all 0.2s;
+  }
+  .icon-btn:hover {
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
+  }
+
+  /* HEADER same as original but adjusted */
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 4rem 4rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 3rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  /* ... rest of styles similar but keep consistent */
+  .name-block h1 { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 300; letter-spacing: -0.02em; line-height: 1.05; }
+  .name-block h1 em { font-style: italic; color: var(--accent); }
+  .name-block .subtitle { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 0.6rem; }
+  .header-meta { display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-end; }
+  .photo-frame { width: 130px; height: 155px; border: 1px solid var(--rule); overflow: hidden; background: var(--highlight); }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%); }
+  .orcid-badge { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; color: var(--muted); border: 1px solid var(--rule); padding: 0.35rem 0.7rem; text-decoration: none; transition: all 0.2s; }
+  .orcid-badge:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  main { max-width: 920px; margin: 0 auto; padding: 4rem 4rem 6rem; }
+  section { margin-bottom: 4rem; animation: fadeUp 0.8s ease both; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  /* paper items with expandable abstract */
+  .paper-item { border-top: 1px solid var(--rule); padding: 1.2rem 0; display: block; cursor: pointer; }
+  .paper-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+  .paper-title { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.2rem; color: var(--accent); transition: color 0.2s; }
+  .paper-title:hover { text-decoration: underline; }
+  .paper-meta { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--muted); }
+  .paper-status { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.18rem 0.5rem; border: 1px solid; display: inline-block; margin-top: 0.3rem; }
+  .paper-status.review { color: var(--accent); border-color: var(--accent); }
+  .paper-status.preprint { color: var(--muted); border-color: var(--rule); }
+  .citation-badge { font-family: 'DM Mono', monospace; font-size: 0.6rem; background: var(--highlight); padding: 0.1rem 0.5rem; border-radius: 20px; margin-left: 0.5rem; white-space: nowrap; }
+  .paper-abstract { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; margin-top: 0.5rem; padding-left: 0.5rem; border-left: 2px solid var(--accent); font-size: 0.9rem; color: var(--muted); font-style: italic; }
+  .paper-abstract.show { max-height: 300px; margin-top: 0.8rem; }
+
+  .doi-link { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.06em; color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 0.3rem 0.65rem; white-space: nowrap; transition: all 0.2s; }
+  .doi-link:hover { background: var(--accent); color: var(--paper); }
+
+  /* recent additions feed */
+  .feed-item { border-bottom: 1px dashed var(--rule); padding: 0.8rem 0; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+  .feed-date { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); }
+
+  .concepts-grid, .profile-link, .project-item, .cv-entry { /* keep original styling */ }
+  .concepts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .concept-card { background: var(--paper); padding: 1.8rem; transition: background 0.25s; }
+  .profile-link { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); padding: 0.5rem 1rem; display: inline-block; margin-right: 0.5rem; margin-bottom: 0.5rem; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 700px) { nav { padding: 0 1rem; } .nav-links li:nth-child(n+5) { display: none; } header { padding: 2rem; grid-template-columns: 1fr; } main { padding: 2rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Mumtaz Enser</span>
+  <ul class="nav-links">
+    <li><a href="#research" data-i18n="nav_research">Research</a></li>
+    <li><a href="#cv" data-i18n="nav_cv">CV</a></li>
+    <li><a href="#concepts" data-i18n="nav_concepts">Concepts</a></li>
+    <li><a href="#papers" data-i18n="nav_papers">Papers</a></li>
+    <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+    <li><a href="#recent" data-i18n="nav_recent">Recent</a></li>
+    <li><a href="#profiles" data-i18n="nav_profiles">Profiles</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="icon-btn" id="langToggle" aria-label="Language">TR/EN</button>
+    <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode">🌓</button>
+  </div>
+</nav>
+
+<header>
+  <div class="name-block">
+    <h1>Mumtaz <em>Enser</em>, M.A.</h1>
+    <p class="subtitle" data-i18n="subtitle">Independent Researcher  ·  Philosophy of AI &amp; Responsibility</p>
+  </div>
+  <div class="header-meta">
+    <div class="photo-frame"><img src="MumtazResim.jpg" alt="Mumtaz Enser"></div>
+    <a class="orcid-badge" href="https://orcid.org/0009-0001-4841-0418" target="_blank">ORCID 0009-0001-4841-0418</a>
+  </div>
+</header>
+
+<main>
+  <section id="research">
+    <div class="section-label" data-i18n="sec_research">Research Statement</div>
+    <p class="about-text" data-i18n="research_p1">My work develops a relational theory of responsibility for complex institutional and socio-technical systems. Drawing on Wittgenstein, Kant, and Arendt, I argue that the so-called "responsibility gap" in AI ethics is not a genuine absence of responsibility but a conceptual and ontological mistake — arising from an individualistic model of agency that fails to account for distributed, practice-based structures of action.</p>
+    <p class="about-text" style="margin-top:1.2rem;" data-i18n="research_p2">My current research examines the architecture of moral and institutional responsibility across three intersecting domains: the philosophy of artificial intelligence, political philosophy of technology, and the history of analytic philosophy. I am particularly concerned with how decision authority is structured and concealed within AI governance systems, and with the normative implications of what I call <em>ethical withdrawal</em> — the displacement of accountability onto procedures, systems, or institutions that renders responsibility anonymous.</p>
+  </section>
+
+  <section id="cv"><div class="section-label" data-i18n="sec_cv">Curriculum Vitae</div>
+    <div class="cv-block"><div class="cv-block-title" data-i18n="edu">Education</div>
+      <div class="cv-entry"><div class="cv-year">2021</div><div><div class="cv-detail-title">M.A. in Philosophy</div><div class="cv-detail-sub">Dokuz Eylül University — Thesis on Wittgenstein's Certainty</div></div></div>
+    </div>
+    <div class="cv-block"><div class="cv-block-title" data-i18n="positions">Research & Positions</div>
+      <div class="cv-entry"><div class="cv-year">2023–</div><div><div class="cv-detail-title">Independent Researcher</div><div class="cv-detail-sub">Philosophy of AI, Responsibility Theory</div></div></div>
+      <div class="cv-entry"><div class="cv-year">2023–</div><div><div class="cv-detail-title">Registered Expert</div><div class="cv-detail-sub">European Commission — Funding & Tenders Portal</div></div></div>
+    </div>
+  </section>
+
+  <section id="concepts"><div class="section-label" data-i18n="sec_concepts">Key Concepts</div>
+    <div class="concepts-grid"><div class="concept-card"><div class="concept-name">Authority Illusion</div><div class="concept-desc">Structural misalignment between decision authority and accountability in AI governance.</div></div>
+    <div class="concept-card"><div class="concept-name">Ethical Withdrawal</div><div class="concept-desc">Displacement of responsibility onto systems or procedures, making accountability anonymous.</div></div>
+    <div class="concept-card"><div class="concept-name">Distributed Responsibility</div><div class="concept-desc">Responsibility structured across institutional roles rather than a single agent.</div></div></div>
+  </section>
+
+  <!-- ARTICLES UNDER REVIEW + WORKING PAPERS with expandable abstracts -->
+  <section id="papers">
+    <div class="section-label" data-i18n="sec_under_review">Articles Under Review</div>
+    <div class="paper-list" id="papersUnderReview"></div>
+    <div class="section-label" style="margin-top: 2rem;" data-i18n="sec_working">Working Papers & Preprints</div>
+    <div class="paper-list" id="workingPapers"></div>
+  </section>
+
+  <section id="projects"><div class="section-label" data-i18n="sec_projects">Current Research Projects</div>
+    <div class="project-item"><div class="project-title">The Architecture of Moral Responsibility in AI Systems</div><div class="project-desc">Investigating distribution of decision authority across strategic, design, governance layers.</div></div>
+  </section>
+
+  <!-- RECENT ADDITIONS (RSS-like) -->
+  <section id="recent">
+    <div class="section-label" data-i18n="sec_recent">📡 Recently Added Preprints</div>
+    <div id="recentFeed" class="feed-list"></div>
+    <p style="font-size:0.7rem; margin-top:0.5rem; color:var(--muted);" data-i18n="rss_note">New preprints appear here automatically. Subscribe via <a href="#" id="rssLink" style="color:var(--accent);">RSS (simulated)</a>.</p>
+  </section>
+
+  <section id="profiles"><div class="section-label" data-i18n="sec_profiles">Academic Profiles</div>
+    <div><a class="profile-link" href="https://orcid.org/0009-0001-4841-0418">ORCID</a><a class="profile-link" href="https://scholar.google.com/citations?hl=tr&user=9ujapWgAAAAJ">Google Scholar</a><a class="profile-link" href="https://zenodo.org/search?q=Mumtaz+Enser">Zenodo</a></div>
+  </section>
+
+  <section id="contact"><div class="section-label" data-i18n="sec_contact">Contact</div><p class="contact-text"><a href="mailto:m_enser@hotmail.com">m_enser@hotmail.com</a></p></section>
+</main>
+<footer><span>Mumtaz Enser · Independent Researcher</span><span>© 2026</span></footer>
+
+<script>
+  // ----- PAPER DATA (with abstracts, DOIs, dates for recent) -----
+  const papers = {
+    underReview: [
+      { title: "The Responsibility Gap Is a Category Mistake: Ethical Withdrawal and Artificial Intelligence", venue: "Philosophy & Technology", status: "review", abstract: "I argue that the responsibility gap results from a category mistake: treating distributed systems as if they required individualistic agency. Ethical withdrawal is introduced as the structural displacement of accountability.", dateAdded: "2026-04-15" },
+      { title: "Ethical Withdrawal and the Delegation of Violence: Why AI Does Not Decide", venue: "Ethics and Information Technology", status: "review", abstract: "Examines how decision authority is concealed through algorithmic delegation, showing that humans remain decision-makers.", dateAdded: "2026-04-10" },
+      { title: "Protean Responsibility: Beyond the Responsibility Gap in AI Governance", venue: "Science and Engineering Ethics", status: "review", abstract: "Proposes a dynamic, context-sensitive model of responsibility (protean) that adapts to socio-technical structures.", dateAdded: "2026-04-01" }
+    ],
+    working: [
+      { title: "Authority Illusion and the Architecture of Responsibility in AI Governance", venue: "Zenodo", doi: "10.5281/zenodo.18892746", status: "preprint", abstract: "Introduces the concept of authority illusion and a mapping framework for decision authority in AI systems.", dateAdded: "2026-05-01" },
+      { title: "Antagonism, Dependence, and Domination", venue: "Zenodo", doi: "10.5281/zenodo.19153619", status: "working", abstract: "Analysis of power asymmetries and dependence relations in sociotechnical systems.", dateAdded: "2026-04-28" },
+      { title: "Beyond the Responsibility Gap: Relational Agency, Distributed Responsibility", venue: "Zenodo", doi: "10.5281/zenodo.19198110", status: "working", abstract: "Develops a relational theory of agency and systemic pathology as alternative to individualistic models.", dateAdded: "2026-04-20" },
+      { title: "Algorithms Do Not Decide: How Decisions Are Made", venue: "Zenodo", doi: "10.5281/zenodo.19462396", status: "preprint", abstract: "Argues that algorithms are decision-support tools; ultimate decision authority rests with institutional actors.", dateAdded: "2026-05-02" }
+    ]
+  };
+
+  // Render papers with expandable abstracts & citation placeholders
+  function renderPapers() {
+    const underReviewDiv = document.getElementById("papersUnderReview");
+    const workingDiv = document.getElementById("workingPapers");
+    underReviewDiv.innerHTML = ""; workingDiv.innerHTML = "";
+    papers.underReview.forEach(p => { underReviewDiv.appendChild(createPaperElement(p, false)); });
+    papers.working.forEach(p => { workingDiv.appendChild(createPaperElement(p, true)); });
+    // fetch citations for DOIs
+    fetchCitations();
+    // update recent feed
+    updateRecentFeed();
+  }
+
+  function createPaperElement(p, hasDoi) {
+    const div = document.createElement("div");
+    div.className = "paper-item";
+    const headerDiv = document.createElement("div");
+    headerDiv.className = "paper-header";
+    const titleSpan = document.createElement("div");
+    titleSpan.className = "paper-title";
+    titleSpan.innerText = p.title;
+    titleSpan.style.cursor = "pointer";
+    // expand/collapse abstract
+    const abstractDiv = document.createElement("div");
+    abstractDiv.className = "paper-abstract";
+    abstractDiv.innerText = p.abstract || "Abstract not available.";
+    titleSpan.addEventListener("click", (e) => { e.stopPropagation(); abstractDiv.classList.toggle("show"); });
+    const rightSide = document.createElement("div");
+    rightSide.style.display = "flex"; rightSide.style.gap = "0.8rem"; rightSide.style.alignItems = "center";
+    if (hasDoi && p.doi) {
+      const doiLink = document.createElement("a");
+      doiLink.href = `https://doi.org/${p.doi}`;
+      doiLink.target = "_blank";
+      doiLink.className = "doi-link";
+      doiLink.innerText = "DOI →";
+      rightSide.appendChild(doiLink);
+      const citeSpan = document.createElement("span");
+      citeSpan.className = "citation-badge";
+      citeSpan.id = `cite-${p.doi.replace(/[\/\.]/g, '_')}`;
+      citeSpan.innerText = "⏳ citations...";
+      rightSide.appendChild(citeSpan);
+    } else {
+      const placeholder = document.createElement("span");
+      placeholder.className = "citation-badge";
+      placeholder.innerText = "📄 no DOI";
+      rightSide.appendChild(placeholder);
+    }
+    headerDiv.appendChild(titleSpan);
+    headerDiv.appendChild(rightSide);
+    const metaDiv = document.createElement("div");
+    metaDiv.className = "paper-meta";
+    metaDiv.innerText = p.venue;
+    const statusSpan = document.createElement("span");
+    statusSpan.className = `paper-status ${p.status === 'review' ? 'review' : 'preprint'}`;
+    statusSpan.innerText = p.status === 'review' ? 'Under Review' : (p.status === 'preprint' ? 'Preprint' : 'Working Paper');
+    div.appendChild(headerDiv);
+    div.appendChild(metaDiv);
+    div.appendChild(statusSpan);
+    div.appendChild(abstractDiv);
+    return div;
+  }
+
+  // fetch citation counts using Crossref API
+  async function fetchCitations() {
+    for (let p of papers.working) {
+      if (p.doi) {
+        const citeId = `cite-${p.doi.replace(/[\/\.]/g, '_')}`;
+        const elem = document.getElementById(citeId);
+        if (elem) {
+          try {
+            const url = `https://api.crossref.org/works/${p.doi}`;
+            const res = await fetch(url);
+            const data = await res.json();
+            let count = data.message?.isReferencedByCount || 0;
+            elem.innerText = `📖 ${count} citations`;
+          } catch(e) { elem.innerText = `⚠️ cite error`; }
+        }
+      }
+    }
+  }
+
+  // Recent additions feed (sorted by dateAdded)
+  function updateRecentFeed() {
+    const all = [...papers.underReview, ...papers.working];
+    all.sort((a,b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    const latest = all.slice(0, 5);
+    const feedDiv = document.getElementById("recentFeed");
+    feedDiv.innerHTML = "";
+    latest.forEach(p => {
+      const item = document.createElement("div");
+      item.className = "feed-item";
+      item.innerHTML = `<span><strong>${p.title}</strong> — ${p.venue}</span><span class="feed-date">${p.dateAdded}</span>`;
+      feedDiv.appendChild(item);
+    });
+    // RSS simulation: generate feed.xml content (fake)
+    const rssLink = document.getElementById("rssLink");
+    if(rssLink) rssLink.addEventListener("click", (e) => { e.preventDefault(); alert("RSS feed simulation: latest preprints available at /feed.xml (demo). In production, generate XML dynamically."); });
+  }
+
+  // ----- DARK MODE TOGGLE -----
+  const darkToggle = document.getElementById("darkModeToggle");
+  darkToggle.addEventListener("click", () => { document.body.classList.toggle("dark"); localStorage.setItem("darkMode", document.body.classList.contains("dark")); });
+  if(localStorage.getItem("darkMode") === "true") document.body.classList.add("dark");
+
+  // ----- LANGUAGE TOGGLE (TR/EN) -----
+  const translations = {
+    en: {
+      nav_research: "Research", nav_cv: "CV", nav_concepts: "Concepts", nav_papers: "Papers", nav_projects: "Projects", nav_recent: "Recent", nav_profiles: "Profiles", nav_contact: "Contact",
+      subtitle: "Independent Researcher  ·  Philosophy of AI & Responsibility",
+      sec_research: "Research Statement", sec_cv: "Curriculum Vitae", sec_concepts: "Key Concepts", sec_under_review: "Articles Under Review", sec_working: "Working Papers & Preprints",
+      sec_projects: "Current Research Projects", sec_recent: "📡 Recently Added Preprints", sec_profiles: "Academic Profiles", sec_contact: "Contact",
+      research_p1: "My work develops a relational theory of responsibility for complex institutional and socio-technical systems. Drawing on Wittgenstein, Kant, and Arendt, I argue that the so-called 'responsibility gap' in AI ethics is not a genuine absence of responsibility but a conceptual and ontological mistake — arising from an individualistic model of agency that fails to account for distributed, practice-based structures of action.",
+      research_p2: "My current research examines the architecture of moral and institutional responsibility across three intersecting domains: the philosophy of artificial intelligence, political philosophy of technology, and the history of analytic philosophy. I am particularly concerned with how decision authority is structured and concealed within AI governance systems, and with the normative implications of what I call ethical withdrawal — the displacement of accountability onto procedures, systems, or institutions that renders responsibility anonymous.",
+      rss_note: "New preprints appear here automatically. Subscribe via RSS (simulated)."
+    },
+    tr: {
+      nav_research: "Araştırma", nav_cv: "Özgeçmiş", nav_concepts: "Kavramlar", nav_papers: "Makaleler", nav_projects: "Projeler", nav_recent: "Güncel", nav_profiles: "Profiller", nav_contact: "İletişim",
+      subtitle: "Bağımsız Araştırmacı · Yapay Zeka Felsefesi & Sorumluluk",
+      sec_research: "Araştırma Beyanı", sec_cv: "Özgeçmiş", sec_concepts: "Anahtar Kavramlar", sec_under_review: "Hakemdeki Makaleler", sec_working: "Çalışma Tebliğleri & Ön Baskılar",
+      sec_projects: "Güncel Araştırma Projeleri", sec_recent: "📡 Yeni Eklenen Ön Baskılar", sec_profiles: "Akademik Profiller", sec_contact: "İletişim",
+      research_p1: "Çalışmalarım, karmaşık kurumsal ve sosyo-teknik sistemler için ilişkisel bir sorumluluk teorisi geliştirir. Wittgenstein, Kant ve Arendt'ten hareketle, yapay zeka etiğindeki 'sorumluluk boşluğu'nun gerçek bir sorumluluk yokluğu değil, kavramsal ve ontolojik bir hata olduğunu savunuyorum.",
+      research_p2: "Mevcut araştırmam, ahlaki ve kurumsal sorumluluğun mimarisini üç kesişen alanda inceliyor: yapay zeka felsefesi, teknoloji politik felsefesi ve analitik felsefe tarihi. Özellikle karar yetkisinin AI yönetişim sistemleri içinde nasıl yapılandırıldığı ve gizlendiğiyle ilgileniyorum.",
+      rss_note: "Yeni ön baskılar burada otomatik görünür. RSS ile takip edin (simülasyon)."
+    }
+  };
+  let currentLang = "en";
+  function setLanguage(lang) {
+    currentLang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if(translations[lang][key]) el.innerText = translations[lang][key];
+    });
+    // also update research statement paragraphs (specific ids not needed)
+    const p1 = document.querySelector(".about-text");
+    const p2 = document.querySelector(".about-text + .about-text");
+    if(p1 && translations[lang].research_p1) p1.innerText = translations[lang].research_p1;
+    if(p2 && translations[lang].research_p2) p2.innerText = translations[lang].research_p2;
+    const rssNote = document.querySelector("#recent p");
+    if(rssNote && translations[lang].rss_note) rssNote.innerHTML = translations[lang].rss_note;
+  }
+  const langBtn = document.getElementById("langToggle");
+  langBtn.addEventListener("click", () => {
+    const newLang = currentLang === "en" ? "tr" : "en";
+    setLanguage(newLang);
+  });
+  setLanguage("en");
+
+  // Initialize papers
+  renderPapers();
+</script>
+</body>
+</html>
