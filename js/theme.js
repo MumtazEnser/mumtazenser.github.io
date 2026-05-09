@@ -1,24 +1,25 @@
-function getCurrentTheme() {
-  return document.documentElement.getAttribute("data-theme") || "dark";
-}
+function toggleTheme() {
 
-function setTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
+  const html =
+    document.documentElement;
 
-  const button = document.getElementById("themeToggle");
+  const current =
+    html.getAttribute("data-theme") || "dark";
+
+  const next =
+    current === "dark"
+      ? "light"
+      : "dark";
+
+  html.setAttribute("data-theme", next);
+
+  const button =
+    document.getElementById("themeToggle");
 
   if (button) {
-    button.textContent = theme === "dark" ? "Light" : "Dark";
+    button.textContent =
+      next === "dark"
+        ? "Light"
+        : "Dark";
   }
 }
-
-function toggleTheme() {
-  const current = getCurrentTheme();
-  const next = current === "dark" ? "light" : "dark";
-
-  setTheme(next);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  setTheme(getCurrentTheme());
-});

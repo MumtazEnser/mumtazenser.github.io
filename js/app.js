@@ -7,13 +7,11 @@ async function loadSection(id, file) {
     }
 
     const html = await response.text();
-    const target = document.getElementById(id);
 
-    if (target) {
-      target.innerHTML = html;
-    }
+    document.getElementById(id).innerHTML = html;
 
     updateYear();
+
   } catch (error) {
     console.error(error);
   }
@@ -30,30 +28,32 @@ function loadAllSections() {
   loadSection("footer", "sections/footer.html");
 }
 
-function getCurrentLang() {
-  return document.documentElement.getAttribute("data-lang") || "en";
-}
+function toggleLang() {
 
-function setLang(lang) {
-  document.documentElement.setAttribute("data-lang", lang);
-  document.documentElement.setAttribute("lang", lang);
+  const html = document.documentElement;
 
-  const button = document.getElementById("langToggle");
+  const current =
+    html.getAttribute("data-lang") || "en";
+
+  const next =
+    current === "en" ? "tr" : "en";
+
+  html.setAttribute("data-lang", next);
+  html.setAttribute("lang", next);
+
+  const button =
+    document.getElementById("langToggle");
 
   if (button) {
-    button.textContent = lang === "en" ? "TR" : "EN";
+    button.textContent =
+      next === "en" ? "TR" : "EN";
   }
 }
 
-function toggleLang() {
-  const current = getCurrentLang();
-  const next = current === "en" ? "tr" : "en";
-
-  setLang(next);
-}
-
 function toggleAbs(button) {
-  const body = button.nextElementSibling;
+
+  const body =
+    button.nextElementSibling;
 
   if (!body) return;
 
@@ -62,14 +62,21 @@ function toggleAbs(button) {
 }
 
 function updateYear() {
-  const year = document.getElementById("year");
+
+  const year =
+    document.getElementById("year");
 
   if (year) {
-    year.textContent = new Date().getFullYear();
+    year.textContent =
+      new Date().getFullYear();
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  setLang(getCurrentLang());
-  loadAllSections();
-});
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+    loadAllSections();
+
+  }
+);
