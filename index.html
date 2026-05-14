@@ -1,203 +1,84 @@
+
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mumtaz Enser — Wittgenstein Researcher</title>
-
-<meta name="description" content="Mumtaz Enser is a Wittgenstein Researcher working on AI, normativity, responsibility, social ontology, and metaphilosophy.">
-
 <link rel="stylesheet" href="style/main.css">
 </head>
-
 <body>
 
 <header class="header">
 <div class="wrap nav">
-
-<div class="brand">Mumtaz Enser</div>
+<div><strong>Mumtaz Enser</strong></div>
 
 <nav class="links">
-<a href="#domains">Research Domains</a>
-<a href="#framework">Framework</a>
-<a href="#under-review">Under Review</a>
-<a href="#preprints">Preprints</a>
-<a href="#profiles">Profiles</a>
+<a href="index.html">Home</a>
+<a href="wittgenstein.html">Wittgenstein</a>
+<a href="ai.html">AI & Responsibility</a>
+<a href="social-ontology.html">Social Ontology</a>
+<a href="preprints.html">Preprints</a>
 </nav>
 
-<button id="themeToggle" class="theme-btn">
-Light
-</button>
-
+<button class="theme-btn" onclick="toggleTheme()">Theme</button>
 </div>
 </header>
 
-<section class="hero">
 
+<section class="hero">
 <div class="wrap hero-grid">
 
 <div>
-
 <p class="eyebrow">Wittgenstein Researcher</p>
 
 <h1>
-Judgment, Responsibility, and Normativity
-in Institutional Systems
+Judgment, Responsibility, and Normativity in Institutional Systems
 </h1>
 
-<p class="hero-text">
+<p class="subtitle">
 Artificial intelligence does not decide.
-Institutional systems decide through practices
-that authorize, interpret, and normalize outputs.
+Institutional systems decide through practices that authorize outputs.
 </p>
-
 </div>
 
 <div class="hero-image">
-<img src="assets/avatar.webp" alt="Mumtaz Enser">
+<img src="assets/avatar.webp" onerror="this.style.display='none'">
 </div>
 
 </div>
-
 </section>
 
-<section id="domains" class="section">
-
+<section class="section">
 <div class="wrap">
-
 <h2>Research Domains</h2>
 
 <div class="grid">
 
+<a href="wittgenstein.html" style="text-decoration:none;color:inherit">
 <div class="card">
 <h3>Wittgenstein & Metaphilosophy</h3>
-<p>
-Rule-following, certainty, disagreement,
-critique, intelligibility, and the limits of inquiry.
-</p>
+<p>Rule-following, certainty, critique, disagreement, and the limits of inquiry.</p>
 </div>
+</a>
 
+<a href="ai.html" style="text-decoration:none;color:inherit">
 <div class="card">
 <h3>AI, Responsibility & Normativity</h3>
-<p>
-A relational theory of responsibility in
-socio-technical systems.
-</p>
+<p>Authority illusion, ethical withdrawal, protean responsibility, and institutional legitimacy.</p>
 </div>
+</a>
 
+<a href="social-ontology.html" style="text-decoration:none;color:inherit">
 <div class="card">
 <h3>Social Ontology & Political Philosophy</h3>
-<p>
-Institutional pathology, antagonism,
-collective survival, and mimetic subjectivity.
-</p>
+<p>Institutional pathology, antagonism, collective survival, and mimetic structures.</p>
 </div>
+</a>
 
 </div>
-
 </div>
 </section>
 
-<section id="framework" class="section">
-<div class="wrap">
-
-<h2>Conceptual Framework</h2>
-
-<div class="framework">
-
-<div>Wittgenstein</div>
-<div>↓</div>
-<div>Judgment & Normativity</div>
-<div>↓</div>
-<div>Institutional Rationality</div>
-<div>↓</div>
-<div>Authority Illusion</div>
-<div>↓</div>
-<div>Ethical Withdrawal</div>
-<div>↓</div>
-<div>Protean Responsibility</div>
-
-</div>
-
-</div>
-</section>
-
-<section id="under-review" class="section">
-<div class="wrap">
-
-<h2>Selected Manuscripts Under Review</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>The Responsibility Gap Is a Category Mistake</h3>
-<p>Philosophy & Technology</p>
-</div>
-
-<div class="card">
-<h3>Protean Responsibility</h3>
-<p>Science and Engineering Ethics</p>
-</div>
-
-<div class="card">
-<h3>The Recall of Suspended Philosophy</h3>
-<p>Philosophical Investigations</p>
-</div>
-
-<div class="card">
-<h3>Persistent Disagreement and the Limits of Evidence</h3>
-<p>Episteme</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section id="preprints" class="section">
-
-<div class="wrap">
-
-<h2>Selected Preprints</h2>
-
-<div class="grid">
-
-<div class="card">
-<img class="paper-image" src="assets/concepts/authority-illusion.webp" alt="">
-<h3>Authority Illusion and the Architecture of Responsibility in AI Governance</h3>
-</div>
-
-<div class="card">
-<img class="paper-image" src="assets/concepts/algorithms-do-not-decide.webp" alt="">
-<h3>Algorithms Do Not Decide</h3>
-</div>
-
-<div class="card">
-<img class="paper-image" src="assets/concepts/ethical-withdrawal.webp" alt="">
-<h3>Technological Idolatry</h3>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="profiles" class="section">
-<div class="wrap">
-
-<h2>Academic Profiles</h2>
-
-<div class="profiles">
-<a href="https://orcid.org/0009-0001-4841-0418">ORCID</a>
-<a href="https://philpeople.org/profiles/mumtaz-enser">PhilPeople</a>
-<a href="https://scholar.google.com/citations?user=9ujapWgAAAAJ">Google Scholar</a>
-<a href="https://zenodo.org/communities/mumtaz-enser">Zenodo</a>
-</div>
-
-</div>
-</section>
 
 <footer class="footer">
 <div class="wrap">
@@ -206,22 +87,7 @@ collective survival, and mimetic subjectivity.
 </div>
 </footer>
 
-<script>
-const button = document.getElementById("themeToggle");
 
-button.addEventListener("click", () => {
-
-const html = document.documentElement;
-const current = html.getAttribute("data-theme");
-
-const next = current === "dark" ? "light" : "dark";
-
-html.setAttribute("data-theme", next);
-
-button.textContent = next === "dark" ? "Light" : "Dark";
-
-});
-</script>
-
+<script src="theme.js"></script>
 </body>
 </html>
