@@ -1,77 +1,106 @@
-
 <!DOCTYPE html>
-<html data-theme="dark">
+<html data-theme="dark" lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Mumtaz Enser — Wittgenstein Researcher</title>
-<link rel="stylesheet" href="style/main.css">
+<link rel="stylesheet" href="style/main.css"/>
 </head>
 <body>
 
-<header class="header">
-<div class="wrap nav">
-<div><strong>Mumtaz Enser</strong></div>
+<header>
+<div class="wrap">
+<nav class="nav">
 
-<nav class="links">
-<a href="index.html">Home</a>
-<a href="wittgenstein.html">Wittgenstein</a>
-<a href="ai.html">AI & Responsibility</a>
-<a href="social-ontology.html">Social Ontology</a>
-<a href="preprints.html">Preprints</a>
+<div class="brand">Mumtaz <span>Enser</span></div>
+
+<div class="links">
+<a href="wittgenstein/index.html">Wittgenstein</a>
+<a href="ai/index.html">AI & Responsibility</a>
+<a href="social-ontology/index.html">Social Ontology</a>
+<a href="preprints/index.html">Preprints</a>
+</div>
+
+<div class="nav-btns">
+<button class="icon-btn" id="themeToggle" onclick="toggleTheme()">Light</button>
+</div>
+
 </nav>
-
-<button class="theme-btn" onclick="toggleTheme()">Theme</button>
 </div>
 </header>
 
-
 <section class="hero">
-<div class="wrap hero-grid">
+<div class="wrap">
+<div class="hero-grid">
 
-<div>
-<p class="eyebrow">Wittgenstein Researcher</p>
+<div class="panel hero-main">
+
+<div class="eyebrow">
+Wittgenstein Researcher
+</div>
 
 <h1>
-Judgment, Responsibility, and Normativity in Institutional Systems
+Judgment, Responsibility, and Normative Structures
 </h1>
 
 <p class="subtitle">
 Artificial intelligence does not decide.
-Institutional systems decide through practices that authorize outputs.
+Institutional systems decide through practices that authorize,
+interpret, and normalize outputs.
+</p>
+
+<div class="claim">
+Responsibility is not absent in AI systems.
+It is displaced, distributed, and misrecognized.
+</div>
+
+<div class="cta-row">
+<a class="btn primary" href="ai/index.html">AI & Responsibility</a>
+<a class="btn" href="wittgenstein/index.html">Wittgenstein</a>
+<a class="btn" href="social-ontology/index.html">Social Ontology</a>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="section-head">
+<h2>Research Domains</h2>
+</div>
+
+<div class="concepts-grid">
+
+<a href="wittgenstein/index.html" style="text-decoration:none;color:inherit;">
+<div class="concept">
+<h3>Wittgenstein & Metaphilosophy</h3>
+<p>
+Rule-following, certainty, disagreement,
+critique, intelligibility, and the limits of inquiry.
 </p>
 </div>
-
-<div class="hero-image">
-<img src="assets/avatar.webp" onerror="this.style.display='none'">
-</div>
-
-</div>
-</section>
-
-<section class="section">
-<div class="wrap">
-<h2>Research Domains</h2>
-
-<div class="grid">
-
-<a href="wittgenstein.html" style="text-decoration:none;color:inherit">
-<div class="card">
-<h3>Wittgenstein & Metaphilosophy</h3>
-<p>Rule-following, certainty, critique, disagreement, and the limits of inquiry.</p>
-</div>
 </a>
 
-<a href="ai.html" style="text-decoration:none;color:inherit">
-<div class="card">
+<a href="ai/index.html" style="text-decoration:none;color:inherit;">
+<div class="concept">
 <h3>AI, Responsibility & Normativity</h3>
-<p>Authority illusion, ethical withdrawal, protean responsibility, and institutional legitimacy.</p>
+<p>
+Authority illusion, ethical withdrawal,
+protean responsibility, and institutional legitimacy.
+</p>
 </div>
 </a>
 
-<a href="social-ontology.html" style="text-decoration:none;color:inherit">
-<div class="card">
+<a href="social-ontology/index.html" style="text-decoration:none;color:inherit;">
+<div class="concept">
 <h3>Social Ontology & Political Philosophy</h3>
-<p>Institutional pathology, antagonism, collective survival, and mimetic structures.</p>
+<p>
+Institutional pathology, antagonism,
+collective survival, and mimetic structures.
+</p>
 </div>
 </a>
 
@@ -79,15 +108,6 @@ Institutional systems decide through practices that authorize outputs.
 </div>
 </section>
 
-
-<footer class="footer">
-<div class="wrap">
-<p>Mumtaz Enser — Wittgenstein Researcher</p>
-<p>Philosophy of AI, Responsibility, and Normative Structures</p>
-</div>
-</footer>
-
-
-<script src="theme.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>
