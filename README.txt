@@ -1,15 +1,21 @@
-MUMTAZ ENSER WEBSITE PACKAGE
+MUMTAZ ENSER WEBSITE — FINAL COMPLETE PACKAGE
 
-Upload all files directly to your GitHub Pages repository.
+Upload the contents of this folder to the GitHub repository:
+
+mumtazenser.github.io
 
 Included:
 - index.html
 - ai.html
-- preprints.html
 - wittgenstein.html
 - social-ontology.html
-- assets/
-- style/
-- js/
+- preprints.html
+- style/main.css
+- js/theme.js
+- assets/profile.jpg
+- assets/concepts/
+- assets/maps/normative-closure-map.png
 
-Structure is modular and image assets are externalized.
+No base64 images.
+No AI-generated portrait.
+Uses the provided real profile image.
