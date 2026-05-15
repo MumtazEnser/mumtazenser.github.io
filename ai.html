@@ -1,55 +1,66 @@
+
 <!DOCTYPE html>
-<html data-theme="dark" lang="en">
+<html data-theme="dark">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI, Responsibility & Normativity — Mumtaz Enser</title>
+<meta charset="UTF-8">
+<title>AI & Responsibility</title>
 <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-<div class="site">
 
-<aside class="sidebar">
-  <div class="logo">
-    <h1>Mumtaz Enser</h1>
-    <p>Wittgenstein Researcher</p>
-  </div>
-  <img class="profile" src="assets/profile.jpg" alt="Mumtaz Enser">
-  <p class="quote">“Whereof one cannot speak,<br>thereof one must be responsible.”<br>— Wittgenstein (reinterpreted)</p>
-  <div class="sidebar-rule"></div>
-  <div class="side-list">
-    <span>Wittgenstein Researcher</span>
-    <span>Philosophy of AI & Responsibility</span>
-    <span>Social Ontology</span>
-    <span>Normative Structures</span>
-    <span>İzmir, Türkiye</span>
-    <span>istankoylu@gmail.com</span>
-  </div>
-  <a class="side-button" href="#profiles">View Full Profile</a>
-</aside>
+<header class="header">
+<div class="wrap nav">
+<div><strong>Mumtaz Enser</strong></div>
 
-<main class="main">
-<nav class="topnav"><a class="" href="index.html">Home</a>
-<a class="" href="wittgenstein.html">Wittgenstein</a>
-<a class="active" href="ai.html">AI & Responsibility</a>
-<a class="" href="social-ontology.html">Social Ontology</a>
-<a class="" href="preprints.html">Preprints</a>
-<a class="" href="index.html#profiles">Profiles</a>
-<a class="" href="mailto:istankoylu@gmail.com">Contact</a></nav>
-<section class="page">
+<nav class="links">
+<a href="index.html">Home</a>
+<a href="wittgenstein.html">Wittgenstein</a>
+<a href="ai.html">AI & Responsibility</a>
+<a href="social-ontology.html">Social Ontology</a>
+<a href="preprints.html">Preprints</a>
+</nav>
+
+<button class="theme-btn" onclick="toggleTheme()">Theme</button>
+</div>
+</header>
+
+
+<section class="section">
+<div class="wrap">
 <h1>AI, Responsibility & Normativity</h1>
-<div class="cards">
 
-<div class="card"><img src="assets/concepts/authority-illusion.png"><h3>Authority Illusion</h3><p>The systematic misrecognition of distributed human responsibility as system agency.</p></div>
-<div class="card"><img src="assets/concepts/ethical-withdrawal.png"><h3>Ethical Withdrawal</h3><p>The displacement of judgment into procedures, outputs, and institutional routines.</p></div>
-<div class="card"><img src="assets/concepts/algorithms-do-not-decide.png"><h3>Algorithms Do Not Decide</h3><p>AI outputs are interpreted, authorized, and enacted by institutions.</p></div>
-<div class="card"><img src="assets/concepts/protean-responsibility.png"><h3>Protean Responsibility</h3><p>Responsibility shifts across design, deployment, authorization, and oversight.</p></div>
+<div class="grid">
 
+<div class="card">
+<img class="paper-image" src="assets/authority-illusion.webp" onerror="this.style.display='none'">
+<h3>Authority Illusion</h3>
+<p>The systematic misrecognition of distributed human responsibility as system agency.</p>
+</div>
+
+<div class="card">
+<img class="paper-image" src="assets/ethical-withdrawal.webp" onerror="this.style.display='none'">
+<h3>Ethical Withdrawal</h3>
+<p>The displacement of judgment into procedural structures.</p>
+</div>
+
+<div class="card">
+<img class="paper-image" src="assets/algorithms-do-not-decide.webp" onerror="this.style.display='none'">
+<h3>Algorithms Do Not Decide</h3>
+<p>AI outputs are interpreted, authorized, and enacted by institutions.</p>
+</div>
+
+</div>
 </div>
 </section>
-<footer class="footer"><span>© 2026 Mumtaz Enser</span><span>Wittgenstein Researcher</span></footer>
-</main>
+
+
+<footer class="footer">
+<div class="wrap">
+<p>Mumtaz Enser — Wittgenstein Researcher</p>
+<p>Philosophy of AI, Responsibility, and Normative Structures</p>
 </div>
-<script src="js/theme.js"></script>
+</footer>
+
+<script src="theme.js"></script>
 </body>
 </html>
