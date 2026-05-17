@@ -5,7 +5,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wittgenstein — Philosophical Architecture</title>
-<link rel="stylesheet" href="css/style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#050505;
+color:#ece3d1;
+font-family:Georgia, serif;
+overflow-x:hidden;
+}
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:28px 48px;
+z-index:100;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(8px);
+border-bottom:1px solid rgba(212,171,108,.15);
+}
+
+.logo{
+font-size:20px;
+letter-spacing:2px;
+color:#e7d7bf;
+}
+
+nav a{
+margin-left:36px;
+text-decoration:none;
+color:#d8c9b1;
+font-size:14px;
+letter-spacing:1px;
+}
+
+.active{
+border-bottom:1px solid #d4ab6c;
+padding-bottom:8px;
+}
+
+.hero{
+width:100%;
+min-height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+}
+
+.hero img{
+width:100%;
+height:100vh;
+object-fit:cover;
+display:block;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.35));
+pointer-events:none;
+}
+
+.content{
+position:absolute;
+bottom:40px;
+left:40px;
+right:40px;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+}
+
+.signature{
+text-align:right;
+}
+
+.signature .name{
+font-size:52px;
+font-style:italic;
+color:#d4ab6c;
+}
+
+.signature .sub{
+margin-top:10px;
+letter-spacing:4px;
+font-size:12px;
+}
+
+@media(max-width:1100px){
+
+.content{
+flex-direction:column;
+gap:20px;
+align-items:flex-start;
+}
+
+.signature{
+text-align:left;
+}
+
+.signature .name{
+font-size:36px;
+}
+
+.hero img{
+height:auto;
+min-height:100vh;
+}
+
+}
+
+</style>
 </head>
 <body>
 
@@ -22,167 +144,22 @@
 
 <section class="hero">
 
+<img src="assets/hero-mockup.png" alt="Wittgenstein Philosophical Architecture">
+
 <div class="overlay"></div>
 
-<div class="hero-left">
-<div class="quote-mark">“</div>
+<div class="content">
 
-<p class="quote">
-467. I am sitting in the garden with a philosopher; he keeps on pointing to a tree near us and saying, ‘I know that that is a tree.’<br><br>
+<div></div>
 
-Someone comes up and hears this, and I say to him:<br><br>
-
-<span>‘This fellow isn’t insane.<br>
-We are only doing philosophy.’</span>
-</p>
-
-<div class="author">
-— Ludwig Wittgenstein, <i>On Certainty</i> §467
+<div class="signature">
+<div class="name">Mumtaz Enser</div>
+<div class="sub">PHILOSOPHICAL ARCHITECTURE</div>
 </div>
 
-<div class="tags">
-ORDINARY LANGUAGE · CERTAINTY · HINGE · CONTEXT
-</div>
-
-</div>
-
-<div class="hero-right">
-<img class="hero-image" src="assets/hero.png" alt="Wittgenstein illustration">
-<div class="oc">OC §467</div>
 </div>
 
 </section>
-
-<section class="grid">
-
-<div class="row">
-<div class="icon">◌</div>
-
-<div class="title">
-<h2>I</h2>
-<h3>QUESTIONING</h3>
-</div>
-
-<div class="desc">
-This section examines how philosophical questions become meaningful, how certain challenges fail to register as questions, and how normative closure shapes the boundaries of intelligibility.
-</div>
-
-<div class="themes">
-<h4>THEMES</h4>
-<ul>
-<li>Askability</li>
-<li>Hinge Exposure</li>
-<li>Normative Closure</li>
-<li>Conditions of Intelligibility</li>
-<li>The Ethics of Philosophical Inquiry</li>
-</ul>
-</div>
-</div>
-
-<div class="row">
-<div class="icon">△</div>
-
-<div class="title">
-<h2>II</h2>
-<h3>RULE-FOLLOWING & PRACTICE</h3>
-</div>
-
-<div class="desc">
-This section investigates how rules function within forms of life, why they do not determine their own application, and how procedures can displace ethical judgment.
-</div>
-
-<div class="themes">
-<h4>THEMES</h4>
-<ul>
-<li>Rule-Following & Judgment</li>
-<li>Ethical Withdrawal</li>
-<li>When Harm Becomes Inactionable</li>
-<li>Algorithms Do Not Decide</li>
-</ul>
-</div>
-</div>
-
-<div class="row">
-<div class="icon">◎</div>
-
-<div class="title">
-<h2>III</h2>
-<h3>ONTOLOGY & WORLD</h3>
-</div>
-
-<div class="desc">
-This section explores the relationship between language and world, ontology and practice, and the question of system in an already-ordered reality.
-</div>
-
-<div class="themes">
-<h4>THEMES</h4>
-<ul>
-<li>World & Forms of Life</li>
-<li>Ontology, System & Relations</li>
-<li>Truth, Reality & Conceptual Limits</li>
-<li>Organismic & Relational Ontology</li>
-</ul>
-</div>
-</div>
-
-<div class="row">
-<div class="icon">∿</div>
-
-<div class="title">
-<h2>IV</h2>
-<h3>DIAGNOSIS</h3>
-</div>
-
-<div class="desc">
-This section focuses on the diagnostic role of philosophy and the structural sources of persistent disagreement within practices.
-</div>
-
-<div class="themes">
-<h4>THEMES</h4>
-<ul>
-<li>Critique as Diagnosis</li>
-<li>Persistent Disagreement</li>
-<li>Diagnosis, Practice & Social Life</li>
-<li>Conceptual Pathology & Limits</li>
-</ul>
-</div>
-</div>
-
-<div class="row">
-<div class="icon">⚖</div>
-
-<div class="title">
-<h2>V</h2>
-<h3>ETHICS & RESPONSIBILITY</h3>
-</div>
-
-<div class="desc">
-This section brings together the ethical implications of our inquiries: responsibility as a human practice and the limits of legitimacy in complex systems.
-</div>
-
-<div class="themes">
-<h4>THEMES</h4>
-<ul>
-<li>Responsibility & Accountability</li>
-<li>Domination, Power & Antagonism</li>
-<li>Legality, Justice & Ethical Life</li>
-<li>Institutional Ethics & Withdrawal</li>
-</ul>
-</div>
-</div>
-
-</section>
-
-<footer>
-<div class="footer-left">
-This site presents an interconnected philosophical architecture grounded in Wittgensteinian themes: questioning, rule-following, ontology, diagnosis, and ethics.
-</div>
-
-<div class="footer-right">
-<div class="signature">Mumtaz Enser</div>
-<div class="subsig">PHILOSOPHICAL ARCHITECTURE</div>
-</div>
-</footer>
 
 </body>
 </html>
