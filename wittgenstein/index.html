@@ -1,165 +1,168 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wittgenstein — Philosophical Architecture</title>
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:#050505;
-color:#ece3d1;
-font-family:Georgia, serif;
-overflow-x:hidden;
-}
-
-.navbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:28px 48px;
-z-index:100;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(8px);
-border-bottom:1px solid rgba(212,171,108,.15);
-}
-
-.logo{
-font-size:20px;
-letter-spacing:2px;
-color:#e7d7bf;
-}
-
-nav a{
-margin-left:36px;
-text-decoration:none;
-color:#d8c9b1;
-font-size:14px;
-letter-spacing:1px;
-}
-
-.active{
-border-bottom:1px solid #d4ab6c;
-padding-bottom:8px;
-}
-
-.hero{
-width:100%;
-min-height:100vh;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-}
-
-.hero img{
-width:100%;
-height:100vh;
-object-fit:cover;
-display:block;
-}
-
-.overlay{
-position:absolute;
-inset:0;
-background:linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.35));
-pointer-events:none;
-}
-
-.content{
-position:absolute;
-bottom:40px;
-left:40px;
-right:40px;
-display:flex;
-justify-content:space-between;
-align-items:flex-end;
-}
-
-.signature{
-text-align:right;
-}
-
-.signature .name{
-font-size:52px;
-font-style:italic;
-color:#d4ab6c;
-}
-
-.signature .sub{
-margin-top:10px;
-letter-spacing:4px;
-font-size:12px;
-}
-
-@media(max-width:1100px){
-
-.content{
-flex-direction:column;
-gap:20px;
-align-items:flex-start;
-}
-
-.signature{
-text-align:left;
-}
-
-.signature .name{
-font-size:36px;
-}
-
-.hero img{
-height:auto;
-min-height:100vh;
-}
-
-}
-
-</style>
+<title>Wittgenstein | Philosophical Architecture</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="navbar">
-<div class="logo">MUMTAZ ENSER</div>
-
-<nav>
-<a href="/">HOME</a>
-<a href="/ai/">AI</a>
-<a class="active" href="#">WITTGENSTEIN</a>
-<a href="#">ABOUT</a>
-</nav>
+<header class="nav">
+  <div class="brand">MÜMTAZ ENSER</div>
+  <nav>
+    <a href="/">HOME</a>
+    <a href="/ai/">AI</a>
+    <a class="active" href="/wittgenstein/">WITTGENSTEIN</a>
+    <a href="/about/">ABOUT</a>
+  </nav>
 </header>
 
+<main class="page">
+
 <section class="hero">
+  <div class="quote-side">
+    <div class="quote-mark">“</div>
+    <p class="quote-main">
+      467. I am sitting in the garden with a philosopher;<br>
+      he keeps on pointing to a tree near us and saying,<br>
+      ‘I know that that is a tree.’
+    </p>
+    <p class="quote-small">
+      Someone comes up and hears this, and I say to him:
+    </p>
+    <h1>
+      ‘This fellow isn’t insane.<br>
+      We are only doing philosophy.’
+    </h1>
+    <p class="source">— Ludwig Wittgenstein, <em>On Certainty</em> §467</p>
+    <p class="tags">ORDINARY LANGUAGE · CERTAINTY · HINGE · CONTEXT</p>
+  </div>
 
-<img src="assets/hero-mockup.png" alt="Wittgenstein Philosophical Architecture">
+  <div class="image-side">
+    <img src="assets/wittgenstein-tree-scene.png" alt="On Certainty §467 tree scene">
+    <div class="oc">OC §467</div>
+  </div>
+</section>
 
-<div class="overlay"></div>
+<section class="architecture">
 
-<div class="content">
+  <article class="axis">
+    <div class="icon circle-icon"><span></span></div>
+    <div class="title">
+      <div class="roman">I</div>
+      <h2>QUESTIONING</h2>
+      <div class="small-line"></div>
+    </div>
+    <div class="desc">
+      This section examines how philosophical questions become meaningful, how certain challenges fail to register as questions, and how normative closure shapes the boundaries of intelligibility.
+    </div>
+    <div class="themes">
+      <h3>THEMES</h3>
+      <p>Askability</p>
+      <p>Hinge Exposure</p>
+      <p>Normative Closure</p>
+      <p>Conditions of Intelligibility</p>
+      <p>The Ethics of Philosophical Inquiry</p>
+    </div>
+  </article>
 
-<div></div>
+  <article class="axis">
+    <div class="icon funnel-icon"></div>
+    <div class="title">
+      <div class="roman">II</div>
+      <h2>RULE-FOLLOWING<br>& PRACTICE</h2>
+      <div class="small-line"></div>
+    </div>
+    <div class="desc">
+      This section investigates how rules function within forms of life, why they do not determine their own application, and how procedures can displace ethical judgment.
+    </div>
+    <div class="themes">
+      <h3>THEMES</h3>
+      <p>Rule-Following & Judgment</p>
+      <p>Ethical Withdrawal & Responsibility</p>
+      <p>When Harm Becomes Inactionable</p>
+      <p>Algorithms Do Not Decide</p>
+      <p>Practice, Norms & Action-Guidance</p>
+    </div>
+  </article>
 
-<div class="signature">
-<div class="name">Mumtaz Enser</div>
-<div class="sub">PHILOSOPHICAL ARCHITECTURE</div>
-</div>
+  <article class="axis">
+    <div class="icon orbit-icon"></div>
+    <div class="title">
+      <div class="roman">III</div>
+      <h2>ONTOLOGY<br>& WORLD</h2>
+      <div class="small-line"></div>
+    </div>
+    <div class="desc">
+      This section explores the relationship between language and world, ontology and practice, and the question of system in an already-ordered reality.
+    </div>
+    <div class="themes">
+      <h3>THEMES</h3>
+      <p>World & Forms of Life</p>
+      <p>Ontology, System & Relations</p>
+      <p>Truth, Reality & Conceptual Limits</p>
+      <p>Organismic & Relational Ontology</p>
+      <p>Ontologized Relationship</p>
+    </div>
+  </article>
 
-</div>
+  <article class="axis">
+    <div class="icon wave-icon"></div>
+    <div class="title">
+      <div class="roman">IV</div>
+      <h2>DIAGNOSIS</h2>
+      <div class="small-line"></div>
+    </div>
+    <div class="desc">
+      This section focuses on the diagnostic role of philosophy and the structural sources of persistent disagreement within practices.
+    </div>
+    <div class="themes themes-with-quote">
+      <div>
+        <h3>THEMES</h3>
+        <p>Critique as Diagnosis</p>
+        <p>Persistent Disagreement Frameworks</p>
+        <p>Diagnosis, Practice & Social Life</p>
+        <p>Conceptual Pathology & Limits</p>
+      </div>
+      <blockquote>
+        <span>“</span>
+        Critique does not<br>stand outside<br>practice.
+        <small>— MÜMTAZ ENSER</small>
+      </blockquote>
+    </div>
+  </article>
+
+  <article class="axis">
+    <div class="icon scale-icon">⚖</div>
+    <div class="title">
+      <div class="roman">V</div>
+      <h2>ETHICS &<br>RESPONSIBILITY</h2>
+      <div class="small-line"></div>
+    </div>
+    <div class="desc">
+      This section brings together the ethical implications of our inquiries: responsibility as a human practice and the limits of legitimacy in complex systems.
+    </div>
+    <div class="themes">
+      <h3>THEMES</h3>
+      <p>Responsibility & Accountability</p>
+      <p>Domination, Power & Antagonism</p>
+      <p>Legality, Justice & Ethical Life</p>
+      <p>Institutional Ethics & Withdrawal</p>
+    </div>
+  </article>
 
 </section>
+
+<footer class="footer">
+  <p>This site presents an interconnected philosophical architecture grounded in Wittgensteinian themes: questioning, rule-following, ontology, diagnosis, and ethics.</p>
+  <div class="signature">
+    <div>Mümtaz Enser</div>
+    <span>PHILOSOPHICAL ARCHITECTURE</span>
+  </div>
+</footer>
+
+</main>
 
 </body>
 </html>
