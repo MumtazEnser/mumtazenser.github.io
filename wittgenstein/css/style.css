@@ -36,11 +36,14 @@ padding-bottom:5px;
 
 .hero{
 display:grid;
-grid-template-columns:1.2fr 1fr;
-min-height:70vh;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:60px;
+min-height:100vh;
 padding:60px;
 position:relative;
 background:radial-gradient(circle at center,#2b241f 0%, #050505 65%);
+overflow:hidden;
 }
 
 .quote-mark{
@@ -76,10 +79,11 @@ color:#b9a88c;
 }
 
 .hero-right{
-position:relative;
 display:flex;
 justify-content:center;
 align-items:center;
+position:relative;
+width:100%;
 }
 
 .tree{
@@ -212,4 +216,49 @@ width:100%;
 max-width:760px;
 border:1px solid rgba(216,178,123,.15);
 box-shadow:0 0 60px rgba(0,0,0,.5);
+}
+
+
+.hero-left{
+max-width:900px;
+z-index:2;
+}
+
+.hero-image{
+width:100%;
+max-width:780px;
+height:auto;
+display:block;
+border:1px solid rgba(216,178,123,.12);
+box-shadow:0 0 80px rgba(0,0,0,.45);
+object-fit:cover;
+}
+
+@media(max-width:1200px){
+
+.hero{
+grid-template-columns:1fr;
+padding:40px 24px;
+gap:40px;
+}
+
+.hero-right{
+order:-1;
+}
+
+.hero-image{
+max-width:100%;
+}
+
+.quote{
+font-size:22px;
+}
+
+.quote span{
+font-size:34px;
+}
+
+.row{
+grid-template-columns:1fr;
+}
 }
