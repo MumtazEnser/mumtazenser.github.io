@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mümtaz Enser — Philosophy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <style>
+    :root {
+      --bg: #F5F0E8;
+      --ink: #1A1612;
+      --accent: #8B4513;
+      --muted: #8A7968;
+      --rule: #C8B99A;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.8rem 3rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .site-logo {
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+    }
+
+    .site-logo span {
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 8rem;
+      padding-bottom: 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .hero-text {
+      padding: 4rem 3rem 4rem 3rem;
+      border-right: 1px solid var(--rule);
+    }
+
+    .hero-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+      color: var(--ink);
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-bio {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 42ch;
+      margin-bottom: 3rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      background: var(--ink);
+      color: var(--bg);
+      border: 1px solid var(--ink);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn-ghost {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--rule);
+      transition: all 0.3s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+    }
+
+    /* ── HERO RIGHT — SECTION GRID ── */
+    .hero-sections {
+      padding: 4rem 3rem;
+    }
+
+    .sections-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+
+    .section-card {
+      background: var(--bg);
+      padding: 2rem;
+      transition: background 0.3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .section-card:hover {
+      background: #EDE5D5;
+    }
+
+    .section-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card-icon {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+    }
+
+    .card-arrow {
+      position: absolute;
+      top: 2rem; right: 2rem;
+      font-size: 1rem;
+      color: var(--rule);
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .section-card:hover .card-arrow {
+      color: var(--ink);
+      transform: translate(3px, -3px);
+    }
+
+    /* ── RESEARCH INTERESTS ── */
+    .interests-bar {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      overflow-x: auto;
+    }
+
+    .interests-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .interest-tag {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+      white-space: nowrap;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+      cursor: default;
+    }
+
+    .interest-tag:hover {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+
+    .interest-sep {
+      color: var(--rule);
+      flex-shrink: 0;
+    }
+
+    /* ── LATEST WORK ── */
+    .latest {
+      padding: 4rem 3rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    .view-all {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 2px;
+      transition: all 0.3s;
+    }
+
+    .view-all:hover {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+
+    .paper-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .paper-item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 2rem;
+      align-items: start;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      transition: all 0.3s;
+    }
+
+    .paper-item:hover {
+      padding-left: 1rem;
+    }
+
+    .paper-year {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      padding-top: 0.2rem;
+    }
+
+    .paper-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .paper-venue {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-top: 0.3rem;
+    }
+
+    .paper-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--rule);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      header { padding: 1.2rem 1.5rem; }
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { border-right: none; border-bottom: 1px solid var(--rule); padding: 2rem 1.5rem; }
+      .hero-sections { padding: 2rem 1.5rem; }
+      .section-grid { grid-template-columns: 1fr; }
+      .interests-bar { padding: 1.5rem; }
+      .latest { padding: 3rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="site-logo">Mümtaz Enser <span>/ Philosophy</span></div>
+  <nav>
+    <a href="wittgenstein/">Wittgenstein</a>
+    <a href="ai/">AI Ethics</a>
+    <a href="concepts/">Concepts</a>
+    <a href="papers/">Papers</a>
+    <a href="cv/">CV</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-label fade-in">Academic Philosophy — Istanbul</div>
+      <h1 class="fade-in">
+        Agency,<br>
+        <em>Responsibility</em>,<br>
+        and the Limits<br>
+        of Machines.
+      </h1>
+      <p class="hero-bio fade-in">
+        I work at the intersection of analytic philosophy, AI ethics, and epistemology. 
+        My research examines how concepts of agency and moral responsibility apply — 
+        or fail to apply — to algorithmic systems.
+      </p>
+      <div class="hero-links fade-in">
+        <a href="papers/" class="btn-primary">View Papers</a>
+        <a href="cv/" class="btn-ghost">Curriculum Vitae</a>
+      </div>
+    </div>
+
+    <div class="hero-sections">
+      <div class="sections-label">Research Domains</div>
+      <div class="section-grid">
+        <a href="wittgenstein/" class="section-card">
+          <div class="card-icon">§ OC / PI</div>
+          <div class="card-title">Wittgenstein</div>
+          <div class="card-desc">Hinge propositions, language games, forms of life</div>
+          <span class="card-arrow">↗</span>
+        </a>
+        <a href="ai/" class="section-card">
+          <div class="card-icon">∿ Governance</div>
+          <div class="card-title">AI Ethics</div>
+          <div class="card-desc">Agency mislocation, algorithmic accountability</div>
+          <span class="card-arrow">↗</span>
+        </a>
+        <a href="concepts/" class="section-card">
+          <div class="card-icon">◈ Framework</div>
+          <div class="card-title">Concepts</div>
+          <div class="card-desc">Conceptual architecture, DOI index, visual maps</div>
+          <span class="card-arrow">↗</span>
+        </a>
+        <a href="papers/" class="section-card">
+          <div class="card-icon">∂ Archive</div>
+          <div class="card-title">Papers</div>
+          <div class="card-desc">Manuscripts, preprints, Zenodo publications</div>
+          <span class="card-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="interests-bar">
+    <div class="interests-label">Interests</div>
+    <span class="interest-tag">Philosophy of Mind</span>
+    <span class="interest-sep">·</span>
+    <span class="interest-tag">AI Ethics</span>
+    <span class="interest-sep">·</span>
+    <span class="interest-tag">Moral Responsibility</span>
+    <span class="interest-sep">·</span>
+    <span class="interest-tag">Wittgenstein</span>
+    <span class="interest-sep">·</span>
+    <span class="interest-tag">Epistemic Agency</span>
+    <span class="interest-sep">·</span>
+    <span class="interest-tag">Hinge Epistemology</span>
+    <span class="interest-sep">·</span>
+    <span class="interest-tag">Philosophy of Action</span>
+    <span class="interest-sep">·</span>
+    <span class="interest-tag">Algorithmic Decision-Making</span>
+  </div>
+
+  <section class="latest">
+    <div class="section-header">
+      <h2 class="section-title">Recent Work</h2>
+      <a href="papers/" class="view-all">All Papers →</a>
+    </div>
+    <div class="paper-list">
+      <div class="paper-item">
+        <div class="paper-year">2024</div>
+        <div>
+          <div class="paper-title">Algorithms Do Not Decide: Responsibility, Hinge Structures, and the Mislocation of Agency in AI Systems</div>
+          <div class="paper-venue">Preprint — Zenodo</div>
+        </div>
+        <div class="paper-tag">Preprint</div>
+      </div>
+      <div class="paper-item">
+        <div class="paper-year">2024</div>
+        <div>
+          <div class="paper-title">Hinge Propositions and Epistemic Foundations in Machine Learning Systems</div>
+          <div class="paper-venue">Working Manuscript</div>
+        </div>
+        <div class="paper-tag">WIP</div>
+      </div>
+      <div class="paper-item">
+        <div class="paper-year">2023</div>
+        <div>
+          <div class="paper-title">On the Moral Grammar of Automated Systems: A Wittgensteinian Critique</div>
+          <div class="paper-venue">Working Manuscript</div>
+        </div>
+        <div class="paper-tag">WIP</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Mümtaz Enser — Philosophy</p>
+  <div class="footer-links">
+    <a href="https://zenodo.org" target="_blank">Zenodo</a>
+    <a href="https://orcid.org" target="_blank">ORCID</a>
+    <a href="mailto:m.enser@example.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concepts — Mümtaz Enser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --surface: #F2F2EE;
+      --border: #E0DDD6;
+      --ink: #1A1A18;
+      --dim: #8A8A82;
+      --accent: #C4622D;
+      --accent2: #E8956A;
+      --tag-bg: #EEE8E0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,250,247,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .back-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover { color: var(--ink); }
+
+    .header-label {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 10rem 3rem 5rem;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: end;
+    }
+
+    .hero-left h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-left h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-left p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--dim);
+      max-width: 52ch;
+    }
+
+    .hero-right {
+      padding-bottom: 0.5rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .stat-cell {
+      background: var(--bg);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      padding: 1.2rem 3rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      overflow-x: auto;
+    }
+
+    .filter-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--dim);
+      white-space: nowrap;
+      margin-right: 0.5rem;
+    }
+
+    .filter-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--dim);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    /* ── CONCEPT GRID ── */
+    .concept-grid-section {
+      padding: 4rem 3rem;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .concept-card {
+      background: var(--bg);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s;
+      cursor: default;
+    }
+
+    .concept-card:hover {
+      background: var(--surface);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .concept-domain {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 0.2rem 0.5rem;
+      background: rgba(196,98,45,0.08);
+      border: 1px solid rgba(196,98,45,0.2);
+    }
+
+    .concept-doi {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      color: var(--dim);
+      letter-spacing: 0.05em;
+    }
+
+    .concept-term {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .concept-alt {
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--dim);
+      margin-bottom: 1.2rem;
+    }
+
+    .concept-def {
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--dim);
+      margin-bottom: 1.5rem;
+    }
+
+    .concept-relations {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+
+    .relations-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .relation-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .rtag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.5rem;
+      background: var(--tag-bg);
+      color: var(--dim);
+      border: none;
+    }
+
+    /* ── VISUAL MAP ── */
+    .map-section {
+      padding: 5rem 3rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .map-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3rem;
+    }
+
+    .map-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+    }
+
+    .map-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    .concept-map {
+      width: 100%;
+      border: 1px solid var(--border);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-nav a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-nav a:hover { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      header { padding: 1.2rem 1.5rem; }
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 3rem; padding: 8rem 1.5rem 3rem; }
+      .concept-grid { grid-template-columns: 1fr; }
+      .concept-grid-section { padding: 3rem 1.5rem; }
+      .map-section { padding: 3rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="../" class="back-link">← Mümtaz Enser</a>
+  <div class="header-label">Concepts</div>
+  <nav>
+    <a href="../wittgenstein/">Wittgenstein</a>
+    <a href="../ai/">AI Ethics</a>
+    <a href="../papers/">Papers</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>The <em>Conceptual</em><br>Architecture</h1>
+    <p>A structured index of the key concepts deployed across my research. Each entry maps the concept to its theoretical source, defines its operative meaning in my work, and identifies its connections to adjacent concepts.</p>
+  </div>
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <span class="stat-num">24</span>
+        <span class="stat-label">Concepts</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Domains</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">41</span>
+        <span class="stat-label">Relations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active">All</button>
+  <button class="filter-btn">Wittgenstein</button>
+  <button class="filter-btn">AI Ethics</button>
+  <button class="filter-btn">Epistemology</button>
+  <button class="filter-btn">Agency</button>
+  <button class="filter-btn">Responsibility</button>
+</div>
+
+<section class="concept-grid-section">
+  <div class="concept-grid">
+
+    <div class="concept-card">
+      <div class="card-top">
+        <span class="concept-domain">Wittgenstein</span>
+        <span class="concept-doi">OC §341</span>
+      </div>
+      <div class="concept-term">Hinge Proposition</div>
+      <div class="concept-alt">Scharniersatz</div>
+      <p class="concept-def">A proposition that functions not as a claim subject to epistemic scrutiny, but as a fixed point around which inquiry pivots. Exempt from doubt not by being proven, but by being constitutive of the language-game in which doubt operates.</p>
+      <div class="concept-relations">
+        <div class="relations-label">Related</div>
+        <div class="relation-tags">
+          <span class="rtag">Language Game</span>
+          <span class="rtag">Bedrock</span>
+          <span class="rtag">Certainty</span>
+          <span class="rtag">AI Hinges</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="card-top">
+        <span class="concept-domain">AI Ethics</span>
+        <span class="concept-doi">Enser 2024</span>
+      </div>
+      <div class="concept-term">Agency Mislocation</div>
+      <div class="concept-alt">Sorumluluğun Yerinden Edilmesi</div>
+      <p class="concept-def">The systematic error of attributing genuine decision-making and moral agency to algorithmic systems, thereby displacing accountability from the human agents whose judgments are encoded in those systems.</p>
+      <div class="concept-relations">
+        <div class="relations-label">Related</div>
+        <div class="relation-tags">
+          <span class="rtag">Moral Responsibility</span>
+          <span class="rtag">Accountability</span>
+          <span class="rtag">Governance Gap</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="card-top">
+        <span class="concept-domain">Wittgenstein</span>
+        <span class="concept-doi">PI §7</span>
+      </div>
+      <div class="concept-term">Language Game</div>
+      <div class="concept-alt">Sprachspiel</div>
+      <p class="concept-def">A complete system of linguistic and non-linguistic practices, including the activities and forms of life in which language is embedded. Meaning is determined by use within a language game, not by reference to mind-independent facts.</p>
+      <div class="concept-relations">
+        <div class="relations-label">Related</div>
+        <div class="relation-tags">
+          <span class="rtag">Form of Life</span>
+          <span class="rtag">Rule-Following</span>
+          <span class="rtag">Meaning as Use</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="card-top">
+        <span class="concept-domain">Epistemology</span>
+        <span class="concept-doi">Frankfurt 1971</span>
+      </div>
+      <div class="concept-term">Moral Responsibility</div>
+      <div class="concept-alt">Ahlaki Sorumluluk</div>
+      <p class="concept-def">The property by virtue of which an agent is an appropriate target of reactive attitudes — praise, blame, resentment — in response to their conduct. Requires robust intentionality and the capacity to respond to reasons.</p>
+      <div class="concept-relations">
+        <div class="relations-label">Related</div>
+        <div class="relation-tags">
+          <span class="rtag">Agency</span>
+          <span class="rtag">Reasons-Responsiveness</span>
+          <span class="rtag">Reactive Attitudes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="card-top">
+        <span class="concept-domain">Wittgenstein</span>
+        <span class="concept-doi">PI §19</span>
+      </div>
+      <div class="concept-term">Form of Life</div>
+      <div class="concept-alt">Lebensform</div>
+      <p class="concept-def">The biological, social, and cultural substrate within which language games are embedded. Forms of life are not justified or explained — they are shown. They are the given from which philosophical investigation must begin.</p>
+      <div class="concept-relations">
+        <div class="relations-label">Related</div>
+        <div class="relation-tags">
+          <span class="rtag">Language Game</span>
+          <span class="rtag">Bedrock</span>
+          <span class="rtag">Practice</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept-card">
+      <div class="card-top">
+        <span class="concept-domain">AI Ethics</span>
+        <span class="concept-doi">Technical Lit.</span>
+      </div>
+      <div class="concept-term">Opacity Problem</div>
+      <div class="concept-alt">Kara Kutu Sorunu</div>
+      <p class="concept-def">The epistemic inaccessibility of the internal computational processes of trained neural networks, which creates structural conditions under which accountability attribution becomes practically impossible even where it is in principle required.</p>
+      <div class="concept-relations">
+        <div class="relations-label">Related</div>
+        <div class="relation-tags">
+          <span class="rtag">Explainability</span>
+          <span class="rtag">Governance Gap</span>
+          <span class="rtag">Hinge Inheritance</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="map-section">
+  <div class="map-header">
+    <h2 class="map-title">Concept Relations</h2>
+    <span class="map-subtitle">Visual Map — Core Framework</span>
+  </div>
+
+  <svg class="concept-map" viewBox="0 0 900 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="400" fill="#F2F2EE"/>
+
+    <!-- Connection lines -->
+    <line x1="450" y1="200" x2="150" y2="100" stroke="#E0DDD6" stroke-width="1.5"/>
+    <line x1="450" y1="200" x2="750" y2="100" stroke="#E0DDD6" stroke-width="1.5"/>
+    <line x1="450" y1="200" x2="150" y2="300" stroke="#E0DDD6" stroke-width="1.5"/>
+    <line x1="450" y1="200" x2="750" y2="300" stroke="#E0DDD6" stroke-width="1.5"/>
+    <line x1="150" y1="100" x2="150" y2="300" stroke="#E0DDD6" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="750" y1="100" x2="750" y2="300" stroke="#E0DDD6" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="150" y1="100" x2="750" y2="300" stroke="#E0DDD6" stroke-width="0.5" stroke-dasharray="2,6"/>
+    <line x1="750" y1="100" x2="150" y2="300" stroke="#E0DDD6" stroke-width="0.5" stroke-dasharray="2,6"/>
+
+    <!-- Central node -->
+    <circle cx="450" cy="200" r="40" fill="#FAFAF7" stroke="#C4622D" stroke-width="1.5"/>
+    <text x="450" y="196" text-anchor="middle" font-family="DM Serif Display" font-size="11" fill="#C4622D">Agency</text>
+    <text x="450" y="212" text-anchor="middle" font-family="DM Serif Display" font-size="11" fill="#C4622D">Mislocation</text>
+
+    <!-- Quadrant nodes -->
+    <rect x="60" y="60" width="180" height="80" rx="1" fill="#FAFAF7" stroke="#E0DDD6" stroke-width="1"/>
+    <text x="150" y="94" text-anchor="middle" font-family="DM Serif Display" font-size="13" fill="#1A1A18">Hinge</text>
+    <text x="150" y="112" text-anchor="middle" font-family="DM Serif Display" font-size="13" fill="#1A1A18">Proposition</text>
+    <text x="150" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8A8A82" letter-spacing="1">WITTGENSTEIN</text>
+
+    <rect x="660" y="60" width="180" height="80" rx="1" fill="#FAFAF7" stroke="#E0DDD6" stroke-width="1"/>
+    <text x="750" y="94" text-anchor="middle" font-family="DM Serif Display" font-size="13" fill="#1A1A18">Moral</text>
+    <text x="750" y="112" text-anchor="middle" font-family="DM Serif Display" font-size="13" fill="#1A1A18">Responsibility</text>
+    <text x="750" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8A8A82" letter-spacing="1">ETHICS</text>
+
+    <rect x="60" y="260" width="180" height="80" rx="1" fill="#FAFAF7" stroke="#E0DDD6" stroke-width="1"/>
+    <text x="150" y="294" text-anchor="middle" font-family="DM Serif Display" font-size="13" fill="#1A1A18">Form</text>
+    <text x="150" y="312" text-anchor="middle" font-family="DM Serif Display" font-size="13" fill="#1A1A18">of Life</text>
+    <text x="150" y="330" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8A8A82" letter-spacing="1">WITTGENSTEIN</text>
+
+    <rect x="660" y="260" width="180" height="80" rx="1" fill="#FAFAF7" stroke="#E0DDD6" stroke-width="1"/>
+    <text x="750" y="294" text-anchor="middle" font-family="DM Serif Display" font-size="13" fill="#1A1A18">Governance</text>
+    <text x="750" y="312" text-anchor="middle" font-family="DM Serif Display" font-size="13" fill="#1A1A18">Gap</text>
+    <text x="750" y="330" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8A8A82" letter-spacing="1">AI POLICY</text>
+
+    <!-- Relation labels on lines -->
+    <text x="290" y="140" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8A8A82" transform="rotate(-27, 290, 140)">grounds</text>
+    <text x="610" y="140" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8A8A82" transform="rotate(27, 610, 140)">requires</text>
+    <text x="290" y="265" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8A8A82" transform="rotate(27, 290, 265)">embeds</text>
+    <text x="610" y="265" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="#8A8A82" transform="rotate(-27, 610, 265)">produces</text>
+  </svg>
+</section>
+
+<footer>
+  <p>Concepts — Mümtaz Enser</p>
+  <div class="footer-nav">
+    <a href="../ai/">← AI Ethics</a>
+    <a href="../">Home</a>
+    <a href="../papers/">Papers →</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
