@@ -142,6 +142,18 @@ h1{
   justify-content:center;
 }
 
+
+.image-side::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:120px;
+  height:100%;
+  background:linear-gradient(to right,#050505 35%,transparent);
+  z-index:2;
+}
+
 .image-side:after{
   content:"";
   position:absolute;
