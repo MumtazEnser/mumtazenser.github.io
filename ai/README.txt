@@ -1,1 +1,9 @@
-Upload the contents of this folder into /ai/ on your GitHub Pages repo. Keep css/, js/, and images/ together with index.html.
+AI Governance section for mumtazenser.github.io/ai/
+
+Upload the contents of this ZIP directly into the /ai/ folder.
+
+Included:
+- index.html
+- css/style.css
+- js/app.js
+- images/
