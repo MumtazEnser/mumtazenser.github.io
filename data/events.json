@@ -1,11 +1,16 @@
 [
   {
     "date": "2026-10-10",
-    "title": "Urla Felsefe Günleri",
-    "title_en": "Urla Felsefe Günleri",
+    "type": "talk",
+    "language": "[BURAYA YAZ]",
+    "title": "Artificial Intelligence as an Artificial Output of Human Ethics: Morality, Rules and Responsibility",
+    "title_en": "Artificial Intelligence as an Artificial Output of Human Ethics: Morality, Rules and Responsibility",
     "title_tr": "İnsan Etiğinin Yapay Çıktısı Olarak Yapay Zekâ: Ahlak, Kural ve Sorumluluk",
-    "place": "[BURAYA YAZ]",
-    "language": "tr",
-    "type": "talk"
+    "event_title_en": "XI. Urla Philosophy Days",
+    "event_title_tr": "Urla Felsefe Günleri",
+    "theme_en": "Morality, Ethics and Life · 9–10 October 2026 · Urla, İzmir",
+    "place": "Closing Session · Atatürk Cultural Center · Urla, İzmir",
+    "speaker": "Mümtaz Enser (MA)",
+    "adviser_en": "Academic Adviser: Prof. Dr. Doğan Göçmen, Dokuz Eylül University, Department of Philosophy"
   }
 ]
