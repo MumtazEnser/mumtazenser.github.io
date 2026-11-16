@@ -171,7 +171,7 @@
     for(const ev of events.filter(validEvent).sort((a,b)=>b.date.localeCompare(a.date))){
       const category=ev.type==="talk" ? (lang==="tr"?"Konuşma":"Talk") : (lang==="tr"?"Haber":"News");
       const item=el("li","event-entry");
-      const label=ev.type==="talk" ? (lang==="tr" && isKnown(ev.title_tr) ? ev.title_tr : ev.title) : ev.title;
+      const label=ev.type==="talk" ? (lang==="tr" && isKnown(ev.title_tr) ? ev.title_tr + " — " + ev.title : ev.title) : ev.title;
       append(item,el("time",null,dateText(ev.date)),el("strong",null,label),el("span","event-type",category));
       item.querySelector("time").dateTime=ev.date;
       (ev.date>today?upcomingRecords:pastRecords).push(item);
