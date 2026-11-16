@@ -1,41 +1,49 @@
 {
+  "name": "Mümtaz Enser",
+  "subtitle_en": "Independent philosopher working on responsibility, authority, and AI, from a Wittgensteinian standpoint.",
+  "subtitle_tr": "[BURAYA YAZ]",
   "thesis_en": "[BURAYA YAZ]",
   "thesis_tr": "[BURAYA YAZ]",
   "concepts": [
     {
-      "title_en": "Ethical Withdrawal",
-      "title_tr": "[TR KARŞILIĞI?]",
+      "name_en": "Ethical Withdrawal",
+      "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "[BURAYA YAZ]",
       "definition_tr": "[BURAYA YAZ]",
       "url": "/concepts/"
     },
     {
-      "title_en": "Authority Illusion",
-      "title_tr": "[TR KARŞILIĞI?]",
+      "name_en": "Authority Illusion",
+      "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "[BURAYA YAZ]",
       "definition_tr": "[BURAYA YAZ]",
       "url": "/concepts/"
     },
     {
-      "title_en": "Protean Responsibility",
-      "title_tr": "[TR KARŞILIĞI?]",
+      "name_en": "Protean Responsibility",
+      "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "[BURAYA YAZ]",
       "definition_tr": "[BURAYA YAZ]",
       "url": "/concepts/"
     },
     {
-      "title_en": "Artificial Ontology",
-      "title_tr": "[TR KARŞILIĞI?]",
+      "name_en": "Artificial Ontology",
+      "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "[BURAYA YAZ]",
       "definition_tr": "[BURAYA YAZ]",
       "url": "/concepts/"
     },
     {
-      "title_en": "Victim Gap",
-      "title_tr": "[TR KARŞILIĞI?]",
+      "name_en": "Victim Gap",
+      "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "[BURAYA YAZ]",
       "definition_tr": "[BURAYA YAZ]",
       "url": "/concepts/"
     }
-  ]
+  ],
+  "orcid": "0009-0001-4841-0418",
+  "thesis_number": "1008671",
+  "ec_expert": "European Commission registered expert",
+  "unesco": "UNESCO AI ethics contributions",
+  "email": "m_enser@hotmail.com"
 }
