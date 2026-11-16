@@ -84,6 +84,8 @@
     "@context":"https://schema.org", "@graph":papers.map(p => {
       const obj={"@type":"ScholarlyArticle",headline:p.title,author:{"@type":"Person",name:"Mümtaz Enser"},datePublished:String(p.year)};
       if (isKnown(p.venue)) obj.isPartOf={"@type":"Periodical",name:p.venue};
+      if (p.status==="published") obj.datePublished=String(p.year);
+      else delete obj.datePublished;
       if (isKnown(p.doi)) { obj.identifier=p.doi; obj.url=doiLink(p); }
       if (isKnown(p.abstract_en)) obj.abstract=p.abstract_en;
       if (isKnown(p.keywords)) obj.keywords=p.keywords;
@@ -160,7 +162,7 @@
     return new Intl.DateTimeFormat(locale,{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(Date.UTC(parts[0],parts[1]-1,parts[2])));
   };
   const validEvent=e=>e && /^\d{4}-\d{2}-\d{2}$/.test(e.date) && isKnown(e.title) &&
-    isKnown(e.place) && ["talk","news"].includes(e.type);
+    ["talk","news"].includes(e.type);
   const renderEvents=events=>{
     const past=document.getElementById("events-past"), upcoming=document.getElementById("events-upcoming");
     if (!past||!upcoming)return;
