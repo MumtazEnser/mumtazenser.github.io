@@ -82,10 +82,9 @@
   };
   const ld = papers => ({
     "@context":"https://schema.org", "@graph":papers.map(p => {
-      const obj={"@type":"ScholarlyArticle",headline:p.title,author:{"@type":"Person",name:"Mümtaz Enser"},datePublished:String(p.year)};
-      if (isKnown(p.venue)) obj.isPartOf={"@type":"Periodical",name:p.venue};
+      const obj={"@type":"ScholarlyArticle",headline:p.title,author:{"@type":"Person",name:"Mümtaz Enser"}};
+      if (isKnown(p.venue) && p.venue!=="Zenodo") obj.isPartOf={"@type":"Periodical",name:p.venue};
       if (p.status==="published") obj.datePublished=String(p.year);
-      else delete obj.datePublished;
       if (isKnown(p.doi)) { obj.identifier=p.doi; obj.url=doiLink(p); }
       if (isKnown(p.abstract_en)) obj.abstract=p.abstract_en;
       if (isKnown(p.keywords)) obj.keywords=p.keywords;
@@ -146,11 +145,16 @@
     if (target && isKnown(thesis)) { target.textContent=thesis;target.closest("section").hidden=false; }
     const grid=document.getElementById("concept-grid");
     if(!grid||!Array.isArray(info.concepts))return;
-    const cards=info.concepts.filter(c=>isKnown(c["name_"+lang]) && isKnown(c["definition_"+lang]));
+    // The untranslated marker is never displayed; preserve the original English concept term.
+    const cards=info.concepts.filter(c=>isKnown(c.name_en));
     if (!cards.length) return;
     grid.replaceChildren(...cards.map(c=>{
       const card=el("article","concept-card");
-      append(card,el("h3",null,c["name_"+lang]),el("p",null,c["definition_"+lang]),a(lang==="tr"?"Kavramlar":"Concepts",c.url));
+      const name=lang==="tr" && isKnown(c.name_tr) ? c.name_tr : c.name_en;
+      const description=isKnown(c["definition_"+lang]) ? c["definition_"+lang] : null;
+      append(card,el("h3",null,name));
+      if (description) append(card,el("p",null,description));
+      append(card,a(lang==="tr"?"Kavramlar":"Concepts",c.url));
       return card;
     }));
     document.getElementById("concept-section").hidden=false;
@@ -165,20 +169,36 @@
     ["talk","news"].includes(e.type);
   const renderEvents=events=>{
     const past=document.getElementById("events-past"), upcoming=document.getElementById("events-upcoming");
-    if (!past||!upcoming)return;
-    const current=new Date(), today=[current.getFullYear(),String(current.getMonth()+1).padStart(2,"0"),String(current.getDate()).padStart(2,"0")].join("-");
+    if (!past||!upcoming||!Array.isArray(events)) return;
+    const current=new Date();
+    const today=[current.getFullYear(),String(current.getMonth()+1).padStart(2,"0"),String(current.getDate()).padStart(2,"0")].join("-");
     const upcomingRecords=[], pastRecords=[];
-    for(const ev of events.filter(validEvent).sort((a,b)=>b.date.localeCompare(a.date))){
+    for(const ev of events.filter(validEvent).sort((a,b)=>a.date.localeCompare(b.date))){
       const category=ev.type==="talk" ? (lang==="tr"?"Konuşma":"Talk") : (lang==="tr"?"Haber":"News");
       const item=el("li","event-entry");
-      const label=ev.type==="talk" ? (lang==="tr" && isKnown(ev.title_tr) ? ev.title_tr + " — " + ev.title : ev.title) : ev.title;
-      append(item,el("time",null,dateText(ev.date)),el("strong",null,label),el("span","event-type",category));
-      item.querySelector("time").dateTime=ev.date;
+      const eventName=lang==="tr" && isKnown(ev.event_title_tr) ? ev.event_title_tr : ev.event_title_en;
+      const title=lang==="tr" && isKnown(ev.title_tr) ? ev.title_tr : (isKnown(ev.title_en) ? ev.title_en : ev.title);
+      const info=el("div","event-information");
+      if(isKnown(eventName)) append(info,el("strong","event-name",eventName));
+      append(info,el("span","event-title",title));
+      // Only quote verbatim original-site English detail in the English rendering.
+      if(lang==="en"){
+        if(isKnown(ev.theme_en)) append(info,el("span","event-detail",ev.theme_en));
+        if(isKnown(ev.speaker)) append(info,el("span","event-detail",ev.speaker));
+        if(isKnown(ev.place)) append(info,el("span","event-detail",ev.place));
+        if(isKnown(ev.adviser_en)) append(info,el("span","event-detail",ev.adviser_en));
+      }
+      const time=el("time",null,dateText(ev.date));time.dateTime=ev.date;
+      append(item,time,info,el("span","event-type",category));
       (ev.date>today?upcomingRecords:pastRecords).push(item);
     }
-    past.replaceChildren(...pastRecords);upcoming.replaceChildren(...upcomingRecords);
+    past.replaceChildren(...pastRecords.reverse());
+    upcoming.replaceChildren(...upcomingRecords);
     document.getElementById("events-past-section").hidden=pastRecords.length===0;
     document.getElementById("events-upcoming-section").hidden=upcomingRecords.length===0;
+    // The one-list static fallback is retained if JS is disabled or event data fails.
+    const fallback=document.getElementById("events-all-section");
+    if(fallback)fallback.hidden=true;
   };
   document.addEventListener("click",async event=>{
     const button=event.target.closest(".cite-button");
