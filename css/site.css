@@ -86,7 +86,10 @@ h3{font-size:clamp(21px,2.6vw,28px);margin:0 0 12px}
 .concept-content h2{font-size:clamp(22px,2.5vw,29px);margin:0 0 13px;letter-spacing:-.012em}
 .wittgenstein-lede{font-size:clamp(21px,2.6vw,28px);line-height:1.45}
 .wittgenstein-scene-section{margin-bottom:55px}
-.wittgenstein-artwork{height:clamp(240px,42vw,480px);background-color:#0a0908;background-image:url('/wittgenstein/assets/tree-reference.png');background-size:cover;background-position:center 22%;border:1px solid var(--line)}
+.wittgenstein-artwork{margin:0;background:#0a0908;border:1px solid var(--line);overflow:hidden}
+.wittgenstein-artwork img{display:block;width:100%;height:auto}
+.wittgenstein-passage{margin-top:20px;max-width:70ch}
+.wittgenstein-passage summary{cursor:pointer;color:var(--link);font:600 14px/1.6 system-ui,sans-serif}
 .wittgenstein-quote{max-width:70ch;margin:20px 0 0;padding:0 22px;border-left:2px solid var(--line);font-size:20px;font-style:italic}
 .wittgenstein-quote cite{display:block;margin-top:12px;font:13px system-ui,sans-serif;color:var(--muted)}
 .wittgenstein-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
