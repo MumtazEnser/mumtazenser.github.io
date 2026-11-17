@@ -169,7 +169,7 @@
       const body=el("div","concept-content");
       append(body,el("h3",null,name));
       if(description)append(body,el("p",null,description));
-      append(body,a(lang==="tr"?"Kavramlar":"Concepts",c.url));
+      append(body,a(lang==="tr"?"Kavramlar":"Concepts",lang==="tr"?"/tr/concepts/":c.url));
       append(card,body);
       return card;
     }));
