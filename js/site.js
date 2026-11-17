@@ -152,9 +152,25 @@
       const card=el("article","concept-card");
       const name=lang==="tr" && isKnown(c.name_tr) ? c.name_tr : c.name_en;
       const description=isKnown(c["definition_"+lang]) ? c["definition_"+lang] : null;
-      append(card,el("h3",null,name));
-      if (description) append(card,el("p",null,description));
-      append(card,a(lang==="tr"?"Kavramlar":"Concepts",c.url));
+      if (isKnown(c.image)) {
+        const imageSrc=url(c.image);
+        if(imageSrc) {
+          const figure=el("figure","concept-art"), img=el("img");
+          img.src=imageSrc;
+          img.alt=isKnown(c["alt_"+lang])?c["alt_"+lang]:name;
+          img.loading="lazy";
+          img.decoding="async";
+          img.width=1200;
+          img.height=900;
+          append(figure,img);
+          append(card,figure);
+        }
+      }
+      const body=el("div","concept-content");
+      append(body,el("h3",null,name));
+      if(description)append(body,el("p",null,description));
+      append(body,a(lang==="tr"?"Kavramlar":"Concepts",c.url));
+      append(card,body);
       return card;
     }));
     document.getElementById("concept-section").hidden=false;

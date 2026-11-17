@@ -10,28 +10,40 @@
       "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "Ethical Withdrawal occurs when actors recognize a morally significant harm but cease to treat it as a reason to question, reconsider, or intervene because procedural compliance is regarded as sufficient.",
       "definition_tr": "Ethical Withdrawal, aktörlerin ahlaki bakımdan önemli bir zararı fark etmelerine rağmen prosedüre uygun davranmayı yeterli görerek bu zararı sorgulama, yeniden değerlendirme veya müdahale gerekçesi olarak ele almaktan geri çekilmeleridir.",
-      "url": "/concepts/"
+      "url": "/concepts/",
+      "image": "/assets/concepts/ethical-withdrawal.webp",
+      "alt_en": "Ethical Withdrawal: a clerk completes procedural paperwork while people in distress seek help beyond a glass wall.",
+      "alt_tr": "Ethical Withdrawal: bir görevli evrakları tamamlarken camın ötesindeki insanlar yardım istiyor."
     },
     {
       "name_en": "Authority Illusion",
       "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "Authority Illusion arises when AI outputs are treated as though they independently settle questions of judgment, concealing the human and institutional practices through which those outputs acquire authority.",
       "definition_tr": "Authority Illusion, yapay zekâ çıktılarının yargı gerektiren meseleleri kendi başlarına sonuçlandırıyormuş gibi kabul edilmesi ve bu çıktılara otorite kazandıran insani ve kurumsal pratiklerin görünmez hâle gelmesidir.",
-      "url": "/concepts/"
+      "url": "/concepts/",
+      "image": "/assets/concepts/authority-illusion.webp",
+      "alt_en": "Authority Illusion: a crowd reveres a radiant suspended face, while workers behind the stage operate its machinery.",
+      "alt_tr": "Authority Illusion: kalabalık ışık saçan bir yüze saygıyla bakarken sahne arkasındaki işçiler onun mekanizmasını çalıştırıyor."
     },
     {
       "name_en": "Protean Responsibility",
       "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "Protean Responsibility describes how responsibility becomes attributable and changes form as AI outputs move through practices of acceptance, validation, and authorization.",
       "definition_tr": "Protean Responsibility, yapay zekâ çıktıları kabul, doğrulama ve yetkilendirme pratiklerinden geçerken sorumluluğun nasıl isnat edilebilir hâle geldiğini ve biçim değiştirdiğini açıklar.",
-      "url": "/concepts/"
+      "url": "/concepts/",
+      "image": "/assets/concepts/protean-responsibility.webp",
+      "alt_en": "Protean Responsibility: a luminous object passes between people through successive stages of examination and authorization.",
+      "alt_tr": "Protean Responsibility: ışıklı bir nesne insanlar arasında inceleme ve yetkilendirme aşamalarından geçiyor."
     },
     {
       "name_en": "Artificial Ontology",
       "name_tr": "[TR KARŞILIĞI?]",
       "definition_en": "Artificial Ontology describes the misrecognition of functional necessity as natural rank, through which socially established positions appear to possess a natural rather than constructed standing.",
       "definition_tr": "Artificial Ontology, işlevsel zorunluluğun doğal bir hiyerarşik konum olarak yanlış tanınmasını ve toplumsal olarak oluşturulmuş konumların doğal bir statüye sahipmiş gibi görünmesini açıklar.",
-      "url": "/concepts/"
+      "url": "/concepts/",
+      "image": "/assets/concepts/artificial-ontology.webp",
+      "alt_en": "Artificial Ontology: a monumental marble social hierarchy is visibly assembled and supported by workers and wooden scaffolding.",
+      "alt_tr": "Artificial Ontology: görkemli mermerden bir toplumsal hiyerarşi işçiler ve ahşap iskelelerle inşa edilip ayakta tutuluyor."
     }
   ],
   "orcid": "0009-0001-4841-0418",
