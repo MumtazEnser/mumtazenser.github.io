@@ -166,24 +166,6 @@
     "featured": false
   },
   {
-    "id": "additional-publication",
-    "title": "[BURAYA YAZ]",
-    "venue": "[BURAYA YAZ]",
-    "year": "[BURAYA YAZ]",
-    "status": "[BURAYA YAZ]",
-    "doi": "[BURAYA YAZ]",
-    "preprint_url": "[BURAYA YAZ]",
-    "pdf_url": "[BURAYA YAZ]",
-    "abstract_en": "[BURAYA YAZ]",
-    "abstract_tr": "[BURAYA YAZ]",
-    "keywords": "[BURAYA YAZ]",
-    "bibtex": "[BURAYA YAZ]",
-    "zenodo_url": "[BURAYA YAZ]",
-    "philarchive_url": "[BURAYA YAZ]",
-    "philpapers_url": "[BURAYA YAZ]",
-    "featured": true
-  },
-  {
     "id": "truth-reality-metaphilosophy-2026",
     "title": "The Conceptual Distinction Between Truth and Reality: A Methodological Proposal",
     "venue": "Metaphilosophy",
