@@ -20,9 +20,9 @@
   {
     "id": "ethical-withdrawal-2026",
     "title": "Ethical Withdrawal and the Displacement of Responsibility in AI Ethics: How Rules, Procedures, and Systems Become Responsibility-Shelters",
-    "venue": "Science and Engineering Ethics",
+    "venue": "Independent manuscript",
     "year": 2026,
-    "status": "[BURAYA YAZ]",
+    "status": "working paper",
     "doi": "[BURAYA YAZ]",
     "preprint_url": "[BURAYA YAZ]",
     "pdf_url": "[BURAYA YAZ]",
@@ -33,14 +33,16 @@
     "zenodo_url": "[BURAYA YAZ]",
     "philarchive_url": "[BURAYA YAZ]",
     "philpapers_url": "[BURAYA YAZ]",
-    "featured": false
+    "featured": false,
+    "status_note_en": "Research manuscript; no current journal review is claimed.",
+    "status_note_tr": "Araştırma metni; güncel bir dergi değerlendirmesi iddia edilmemektedir."
   },
   {
     "id": "recall-suspended-philosophy-2026",
     "title": "The Recall of Suspended Philosophy: On Questioning, Closure, and Ontological Risk",
-    "venue": "Zenodo",
+    "venue": "Metaphilosophy",
     "year": 2026,
-    "status": "preprint",
+    "status": "under review",
     "doi": "10.5281/zenodo.20434348",
     "preprint_url": "https://doi.org/10.5281/zenodo.20434348",
     "pdf_url": "[BURAYA YAZ]",
@@ -51,7 +53,9 @@
     "zenodo_url": "https://doi.org/10.5281/zenodo.20434348",
     "philarchive_url": "[BURAYA YAZ]",
     "philpapers_url": "[BURAYA YAZ]",
-    "featured": false
+    "featured": false,
+    "status_note_en": "Under review (manuscript record, 21 November 2026). An open preprint is also available.",
+    "status_note_tr": "Değerlendirmede (21 Kasım 2026 tarihli kayıt). Açık erişimli ön baskısı da mevcut."
   },
   {
     "id": "politics-what-goes-without-saying-2026",
@@ -162,21 +166,183 @@
     "featured": false
   },
   {
-    "id": "additional-publication",
-    "title": "[BURAYA YAZ]",
-    "venue": "[BURAYA YAZ]",
-    "year": "[BURAYA YAZ]",
-    "status": "[BURAYA YAZ]",
-    "doi": "[BURAYA YAZ]",
-    "preprint_url": "[BURAYA YAZ]",
-    "pdf_url": "[BURAYA YAZ]",
-    "abstract_en": "[BURAYA YAZ]",
-    "abstract_tr": "[BURAYA YAZ]",
-    "keywords": "[BURAYA YAZ]",
-    "bibtex": "[BURAYA YAZ]",
-    "zenodo_url": "[BURAYA YAZ]",
-    "philarchive_url": "[BURAYA YAZ]",
-    "philpapers_url": "[BURAYA YAZ]",
-    "featured": true
+    "id": "truth-reality-metaphilosophy-2026",
+    "title": "The Conceptual Distinction Between Truth and Reality: A Methodological Proposal",
+    "venue": "Metaphilosophy",
+    "year": 2026,
+    "status": "under review",
+    "status_note_en": "Under review in the manuscript inventory (21 November 2026).",
+    "status_note_tr": "21 Kasım 2026 tarihli envanterde değerlendirmede.",
+    "featured": false
+  },
+  {
+    "id": "algorithms-ai-and-ethics-2026",
+    "title": "Algorithms Do Not Decide: Responsibility, Hinge Structures, and the Mislocation of Agency in AI Systems",
+    "venue": "AI and Ethics",
+    "year": 2026,
+    "status": "under review",
+    "status_note_en": "Revised manuscript returned to review; reviewers agreed (16 November 2026).",
+    "status_note_tr": "Revize metin yeniden değerlendirmeye alındı; hakem kabulü 16 Kasım 2026.",
+    "featured": false
+  },
+  {
+    "id": "kritik-kant-calismalari-2026",
+    "title": "Tanı Olarak Eleştiri: Kant’ta Aydınlanma, Kültür ve Yargının Zamansallığı",
+    "venue": "Kant Çalışmaları",
+    "year": 2026,
+    "status": "editorial",
+    "status_note_en": "In editorial assessment according to the November 2026 academic CV.",
+    "status_note_tr": "Kasım 2026 akademik özgeçmişine göre editoryal değerlendirmede.",
+    "featured": false
+  },
+  {
+    "id": "responsibility-without-gap-jices-2026",
+    "title": "Responsibility Without a Gap: Ethical Withdrawal, Strategic Withdrawal, and the Grammar of AI Accountability",
+    "venue": "Journal of Information, Communication & Ethics in Society",
+    "year": 2026,
+    "status": "editorial",
+    "status_note_en": "Major revision submitted; awaiting reviewer response (21 November 2026).",
+    "status_note_tr": "Büyük revizyon sonrası hakem yanıtı bekleniyor (21 Kasım 2026).",
+    "featured": false
+  },
+  {
+    "id": "institutional-authority-jehe-2026",
+    "title": "AI, Institutional Authority, and Responsible Uptake in Postdigital Education",
+    "venue": "Journal of Ethics in Higher Education",
+    "year": 2026,
+    "status": "editorial",
+    "status_note_en": "Revision requested / editorial process (21 November 2026).",
+    "status_note_tr": "Revizyon talep edildi / editoryal süreç (21 Kasım 2026).",
+    "featured": false
+  },
+  {
+    "id": "normative-closure-symposion-2026",
+    "title": "Normative Closure Is Not Discursive Closure: A Wittgensteinian Account of Political Intelligibility",
+    "venue": "Symposion",
+    "year": 2026,
+    "status": "submitted",
+    "status_note_en": "Editor indicated that the manuscript would be sent to reviewers; reviewer receipt not confirmed (21 November 2026).",
+    "status_note_tr": "Editör hakemlere gönderileceğini bildirdi; hakeme ulaştığı teyit edilmedi (21 Kasım 2026).",
+    "featured": false
+  },
+  {
+    "id": "ethical-delegation-military-2026",
+    "title": "Ethical Withdrawal and the Delegation of Violence: Why AI Does Not Decide—Humans Do",
+    "venue": "Journal of Military Ethics",
+    "year": 2026,
+    "status": "submitted",
+    "status_note_en": "Submission recorded on 7 August 2026; no subsequent review status verified.",
+    "status_note_tr": "7 Ağustos 2026 tarihli gönderim kaydı var; sonraki hakem durumu teyit edilmedi.",
+    "featured": false
+  },
+  {
+    "id": "ethical-antagonism-forum-2026",
+    "title": "Ethical Antagonism: Ontology, Domination, and Accountability",
+    "venue": "The Philosophical Forum",
+    "year": 2026,
+    "status": "under review",
+    "status_note_en": "Under review in the manuscript inventory dated 21 November 2026.",
+    "status_note_tr": "21 Kasım 2026 tarihli makale envanterinde değerlendirmede.",
+    "featured": false
+  },
+  {
+    "id": "wrong-questions-nordic-2026",
+    "title": "Wrong Questions: When Hinge Exposure Undermines Inquiry",
+    "venue": "Nordic Wittgenstein Review",
+    "year": 2026,
+    "status": "submitted",
+    "status_note_en": "Submission recorded on 6 August 2026.",
+    "status_note_tr": "6 Ağustos 2026 tarihinde gönderildi.",
+    "featured": false
+  },
+  {
+    "id": "grammar-mistake-aesthetics-2026",
+    "title": "The Grammar of a Mistake",
+    "venue": "The Polish Journal of Aesthetics",
+    "year": 2026,
+    "status": "editorial",
+    "status_note_en": "Special issue submission; editorial decision to send for review, with no reviewer completion confirmed.",
+    "status_note_tr": "Özel sayı başvurusu; hakeme gönderim kararı kaydedildi, hakem incelemesinin tamamlandığı teyit edilmedi.",
+    "featured": false
+  },
+  {
+    "id": "persistent-disagreement-ajp-2026",
+    "title": "Persistent Disagreement and the Limits of Evidence: An Epistemic Stratum Account",
+    "venue": "Asian Journal of Philosophy",
+    "year": 2026,
+    "status": "under review",
+    "status_note_en": "Peer-review stage reported after transfer (14 November 2026); previous Erkenntnis decision was a desk rejection.",
+    "status_note_tr": "Transfer sonrası hakem sürecine geçiş bildirildi (14 Kasım 2026); önceki Erkenntnis kararı editoryal ret idi.",
+    "featured": false
+  },
+  {
+    "id": "critique-diagnosis-ejp-2026",
+    "title": "Critique as Diagnosis: Kant, Judgment, and the Temporal Disorder of Reason",
+    "venue": "European Journal of Philosophy",
+    "year": 2026,
+    "status": "under review",
+    "status_note_en": "Under review according to the November 2026 academic CV.",
+    "status_note_tr": "Kasım 2026 akademik özgeçmişine göre değerlendirmede.",
+    "featured": false
+  },
+  {
+    "id": "wittgenstein-system-theoria-2026",
+    "title": "Wittgenstein and the Problem of System: The Possibility of Philosophy in an Already-Ordered World",
+    "venue": "Theoria",
+    "year": 2026,
+    "status": "under review",
+    "status_note_en": "Listed as under review in the November 2026 academic CV.",
+    "status_note_tr": "Kasım 2026 akademik özgeçmişinde değerlendirmede olarak kayıtlı.",
+    "featured": false
+  },
+  {
+    "id": "anonymization-judgment-working-2026",
+    "title": "The Anonymization of Judgment: Authorship, Ethical Ownership, and the Limits of Modern Legality",
+    "venue": "Independent manuscript",
+    "year": 2026,
+    "status": "working paper",
+    "status_note_en": "Seeking a new venue after a previous journal decision; not currently claimed as under review.",
+    "status_note_tr": "Önceki dergi kararından sonra yeni dergi aranıyor; güncel hakemlik iddiası yok.",
+    "featured": false
+  },
+  {
+    "id": "ontologization-working-2026",
+    "title": "Ontologization as a Category Mistake: The Frozen “We,” Relational Entrapment, and the Denial of Becoming",
+    "venue": "Independent manuscript",
+    "year": 2026,
+    "status": "working paper",
+    "status_note_en": "Research manuscript; target journal not yet confirmed.",
+    "status_note_tr": "Araştırma metni; hedef dergi henüz belirlenmedi.",
+    "featured": false
+  },
+  {
+    "id": "ethical-grammar-working-2026",
+    "title": "Ethical Withdrawal: Moral Responsibility and the Grammar of Blame in Artificial Intelligence",
+    "venue": "Independent manuscript",
+    "year": 2026,
+    "status": "working paper",
+    "status_note_en": "Research manuscript; target journal not yet confirmed.",
+    "status_note_tr": "Araştırma metni; hedef dergi henüz belirlenmedi.",
+    "featured": false
+  },
+  {
+    "id": "technological-idolatry-working-2026",
+    "title": "Technological Idolatry: Why Demanding Ethics from AI Is a Category Mistake",
+    "venue": "Independent manuscript",
+    "year": 2026,
+    "status": "working paper",
+    "status_note_en": "Research manuscript; seeking a target journal.",
+    "status_note_tr": "Araştırma metni; hedef dergi aranıyor.",
+    "featured": false
+  },
+  {
+    "id": "platformed-deviation-working-2026",
+    "title": "Platformed Deviation: Mimetic Repetition, Recognizability, and Authenticity in Digital Culture",
+    "venue": "Independent manuscript",
+    "year": 2026,
+    "status": "working paper",
+    "status_note_en": "Research manuscript; seeking a target journal.",
+    "status_note_tr": "Araştırma metni; hedef dergi aranıyor.",
+    "featured": false
   }
 ]

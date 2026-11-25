@@ -6,8 +6,13 @@
   const isKnown = value => value !== null && value !== undefined &&
     (typeof value !== "string" || (value.trim() !== "" && !PLACEHOLDERS.has(value.trim())));
   const labels = {
-    en: {published:"Published", "under review":"Under review",preprint:"Preprint","rejected-revising":"Rejected — revising",abstract:"Abstract",cite:"Cite",copied:"Copied",copyFailed:"Copy unavailable",preprint:"Preprint",pdf:"PDF",doi:"DOI",english:"English",all:"All",empty:"No entries match the filters.",year:"Year",status:"Status"},
-    tr: {published:"Yayımlandı", "under review":"Değerlendirmede",preprint:"Ön baskı","rejected-revising":"Ret sonrası revizyonda",abstract:"Özet",cite:"Atıfı kopyala",copied:"Kopyalandı",copyFailed:"Kopyalanamadı",pdf:"PDF",doi:"DOI",english:"İngilizce",all:"Tümü",empty:"Filtreye uygun kayıt yok.",year:"Yıl",status:"Durum"}
+    en: {published:"Published","under review":"Under review",editorial:"Editorial process",submitted:"Submitted",preprint:"Preprint","working paper":"Working manuscript",abstract:"Abstract",cite:"Cite",copied:"Copied",copyFailed:"Copy unavailable",pdf:"PDF",doi:"DOI",english:"English",all:"All",empty:"No entries match the filters.",year:"Year",status:"Status"},
+    tr: {published:"Yayımlandı","under review":"Değerlendirmede",editorial:"Editoryal süreç",submitted:"Gönderildi",preprint:"Ön baskı","working paper":"Hazırlık aşamasında",abstract:"Özet",cite:"Atıfı kopyala",copied:"Kopyalandı",copyFailed:"Kopyalanamadı",pdf:"PDF",doi:"DOI",english:"İngilizce",all:"Tümü",empty:"Filtreye uygun kayıt yok.",year:"Yıl",status:"Durum"}
+  }[lang];
+  const groupOrder = ["published","under review","editorial","submitted","preprint","working paper"];
+  const groupTitles = {
+    en: {published:"Published","under review":"Under review (reported status)",editorial:"Editorial assessment and revision",submitted:"Submitted manuscripts",preprint:"Open-access preprints","working paper":"Working manuscripts"},
+    tr: {published:"Yayımlanmış","under review":"Değerlendirmede (bildirilen durum)",editorial:"Editoryal inceleme ve revizyon",submitted:"Gönderilen makaleler",preprint:"Açık erişimli ön baskılar","working paper":"Geliştirilmekte olan metinler"}
   }[lang];
   const el = (tag, className, content) => {
     const node = document.createElement(tag);
@@ -36,7 +41,7 @@
   const doiLink = paper => isKnown(paper.doi) ? url("https://doi.org/" + paper.doi.trim()) : null;
   const validPaper = p => p && isKnown(p.title) && isKnown(p.venue) &&
     isKnown(p.year) && Number.isInteger(Number(p.year)) &&
-    ["published","under review","preprint","rejected-revising"].includes(p.status);
+    groupOrder.includes(p.status);
   const ordered = papers => papers.filter(validPaper).sort((a,b) =>
     Number(b.year) - Number(a.year) || a.title.localeCompare(b.title));
   const statusText = status => labels[status] || status;
@@ -58,10 +63,12 @@
     article.dataset.year = String(paper.year);
     article.dataset.status = paper.status;
     const meta = el("p","paper-meta",paper.venue + " · " + paper.year + " · " + statusText(paper.status));
-    const heading = el(small ? "h3" : "h2","paper-title");
+    const heading = el("h3","paper-title");
     const doi = doiLink(paper);
     append(heading,doi ? a(paper.title,doi) : el("span",null,paper.title));
     append(article,meta,heading);
+    const note = paper["status_note_" + lang];
+    if (isKnown(note)) append(article, el("p", "paper-status-note", note));
     addLinks(article,paper);
     if (!small) {
       const abstract = isKnown(paper["abstract_" + lang]) ? paper["abstract_" + lang] : (lang==="tr" && isKnown(paper.abstract_en) ? paper.abstract_en : null);
@@ -81,7 +88,7 @@
     return article;
   };
   const ld = papers => ({
-    "@context":"https://schema.org", "@graph":papers.map(p => {
+    "@context":"https://schema.org", "@graph":papers.filter(p=>["published","preprint"].includes(p.status)).map(p => {
       const obj={"@type":"ScholarlyArticle",headline:p.title,author:{"@type":"Person",name:"Mümtaz Enser"}};
       if (isKnown(p.venue) && p.venue!=="Zenodo") obj.isPartOf={"@type":"Periodical",name:p.venue};
       if (p.status==="published") obj.datePublished=String(p.year);
@@ -100,7 +107,14 @@
     if (!container) return;
     const list=ordered(papers);
     container.replaceChildren();
-    for (const paper of list) container.appendChild(articleElement(paper));
+    for (const status of groupOrder) {
+      const members = list.filter(p=>p.status===status);
+      if (!members.length) continue;
+      const section = el("section","paper-group"); section.dataset.status=status;
+      const heading = el("h2","paper-group-title",groupTitles[status]+" ("+members.length+")");
+      append(section,heading,...members.map(p=>articleElement(p)));
+      append(container,section);
+    }
     writeLD(list);
     initFilters(list);
   };
@@ -122,6 +136,9 @@
         const show=(yearSelect.value==="all"||item.dataset.year===yearSelect.value) &&
           (statusSelect.value==="all"||item.dataset.status===statusSelect.value);
         item.hidden=!show;if(show)count++;
+      }
+      for (const group of document.querySelectorAll("#papers-list .paper-group")) {
+        group.hidden=![...group.querySelectorAll(".paper-entry")].some(entry=>!entry.hidden);
       }
       const empty=document.getElementById("filter-empty");
       if(empty) empty.hidden=count!==0;
