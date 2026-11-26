@@ -9,7 +9,7 @@
     en: {published:"Published","under review":"Under review",editorial:"Editorial process",submitted:"Submitted",preprint:"Preprint","working paper":"Working manuscript",abstract:"Abstract",cite:"Cite",copied:"Copied",copyFailed:"Copy unavailable",pdf:"PDF",doi:"DOI",english:"English",all:"All",empty:"No entries match the filters.",year:"Year",status:"Status"},
     tr: {published:"Yayımlandı","under review":"Değerlendirmede",editorial:"Editoryal süreç",submitted:"Gönderildi",preprint:"Ön baskı","working paper":"Hazırlık aşamasında",abstract:"Özet",cite:"Atıfı kopyala",copied:"Kopyalandı",copyFailed:"Kopyalanamadı",pdf:"PDF",doi:"DOI",english:"İngilizce",all:"Tümü",empty:"Filtreye uygun kayıt yok.",year:"Yıl",status:"Durum"}
   }[lang];
-  const groupOrder = ["published","under review","editorial","submitted","preprint","working paper"];
+  const groupOrder = ["published","preprint"];
   const groupTitles = {
     en: {published:"Published","under review":"Under review (reported status)",editorial:"Editorial assessment and revision",submitted:"Submitted manuscripts",preprint:"Open-access preprints","working paper":"Working manuscripts"},
     tr: {published:"Yayımlanmış","under review":"Değerlendirmede (bildirilen durum)",editorial:"Editoryal inceleme ve revizyon",submitted:"Gönderilen makaleler",preprint:"Açık erişimli ön baskılar","working paper":"Geliştirilmekte olan metinler"}
