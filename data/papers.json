@@ -105,7 +105,9 @@
     "zenodo_url": "https://doi.org/10.5281/zenodo.19153619",
     "philarchive_url": "[BURAYA YAZ]",
     "philpapers_url": "[BURAYA YAZ]",
-    "featured": false
+    "featured": false,
+    "status_note_en": "Zenodo resource type: Working paper.",
+    "status_note_tr": "Zenodo kayıt türü: Working paper (çalışma metni)."
   },
   {
     "id": "authority-illusion-2026",
@@ -123,6 +125,28 @@
     "zenodo_url": "https://doi.org/10.5281/zenodo.18892746",
     "philarchive_url": "[BURAYA YAZ]",
     "philpapers_url": "[BURAYA YAZ]",
+    "featured": false
+  },
+  {
+    "id": "recall-suspended-philosophy-2026",
+    "title": "The Recall of Suspended Philosophy: On Questioning, Closure, and Ontological Risk",
+    "doi": "10.5281/zenodo.20434348",
+    "venue": "Zenodo",
+    "year": 2026,
+    "status": "preprint",
+    "preprint_url": "https://doi.org/10.5281/zenodo.20434348",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.20434348",
+    "featured": false
+  },
+  {
+    "id": "wittgenstein-system-preprint-2026",
+    "title": "Wittgenstein and the Problem of System: Philosophy in an Already-Ordered World",
+    "doi": "10.5281/zenodo.24287418",
+    "venue": "Zenodo",
+    "year": 2026,
+    "status": "preprint",
+    "preprint_url": "https://doi.org/10.5281/zenodo.24287418",
+    "zenodo_url": "https://doi.org/10.5281/zenodo.24287418",
     "featured": false
   }
 ]
